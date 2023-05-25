@@ -1,16 +1,21 @@
-### Hi there 👋
+### Olá, eu sou o Ericky Dias! 🖐️
 
-<!--
-**dev-erickydias/dev-erickydias** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Website](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://devericky.github.io/Ericky-Dias/)
 
-Here are some ideas to get you started:
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ericky_dias/)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send?phone=351932910525&text=Vim%20pelo%20seu%20link%20no%20site%F0%9F%98%98)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCBokRbM4rz-NBUlAQfIjCyw)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+![ErickyDias GitHub stats](https://github-readme-stats.vercel.app/api?username=dev-erickydias&show_icons=true&theme=tokyonight)
+
+### Tecnologias que eu uso no meu dia a dia 
+<div style="display: inline_block"><br>
+  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Rafa-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+</div><br/>
+Uma frase que eu gosto muito de dizer<br/>
+
+> "O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein
+
