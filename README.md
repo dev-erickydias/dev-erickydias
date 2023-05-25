@@ -1,6 +1,6 @@
 ### Olá, eu sou o Ericky Dias! 🖐️
 
-[![Website](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://devericky.github.io/Ericky-Dias/)
+[![Website](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://dev-erickydias.github.io/PrimeiroPortifolio/)
 
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ericky_dias/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send?phone=351932910525&text=Vim%20pelo%20seu%20link%20no%20site%F0%9F%98%98)
