@@ -1,3 +1,5 @@
+![mario coding](https://i.imgur.com/1ZvVkDc.gif)
+
 ### Olá, eu sou o Ericky Dias! 🖐️
 
 [![Website](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://dev-erickydias.github.io/PrimeiroPortifolio/)
