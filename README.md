@@ -21,3 +21,4 @@ Uma frase que eu gosto muito de dizer<br/>
 
 > "O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein
 
+![Snake animation](https://github.com/danielbped/danielbped/blob/output/github-contribution-grid-snake.svg)
