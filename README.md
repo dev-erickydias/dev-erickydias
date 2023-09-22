@@ -4,14 +4,14 @@
 <br>
 
 <div align="justify">
-  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da [Nome da Organização], fundada por desenvolvedores e analistas de dados, como [Nomes das Pessoas], com o objetivo de dar às inteligências artificiais um papel fundamental na educação.</p>
+  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, SonsOFNode, fundada por desenvolvedores e analistas de dados comigo sendo um de seus fundadores, tendo como objetivo de dar às inteligências artificiais um papel fundamental na educação.</p>
 
 <p>Minha paixão é aprender e evoluir constantemente. Estou sempre em busca de novos desafios e oportunidades de crescimento. A tecnologia está em constante evolução, e estou determinado a acompanhá-la de perto.</p>
 
 
 <p>Uma frase que eu gosto muito de dizer</p>
 
-
+[Sons Of Node](https://github.com/SonsOfNode).
 
 > "O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein
 
