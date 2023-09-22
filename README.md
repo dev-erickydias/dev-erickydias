@@ -1,4 +1,3 @@
-[mario coding](https://i.imgur.com/1ZvVkDc.gif)
 <div align="center">
 
 <h1>Olá, eu sou o Ericky Dias! 🖐️ </h1>
