@@ -4,14 +4,13 @@
 <br>
 
 <div align="justify">
-  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, SonsOFNode, fundada por desenvolvedores e analistas de dados comigo sendo um de seus fundadores, tendo como objetivo de dar às inteligências artificiais um papel fundamental na educação.</p>
+  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, <a href="https://github.com/SonsOfNode">SonsOFNode</a> organização fundada por mim e outros desenvolvedores, tendo como objetivo buscar um papel fundamental na educação para as intelizencias artificieais.</p>
 
 <p>Minha paixão é aprender e evoluir constantemente. Estou sempre em busca de novos desafios e oportunidades de crescimento. A tecnologia está em constante evolução, e estou determinado a acompanhá-la de perto.</p>
 
 
 <p>Uma frase que eu gosto muito de dizer</p>
 
-[Sons Of Node](https://github.com/SonsOfNode).
 
 > "O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein
 
@@ -31,17 +30,10 @@
   <img alt="react" height="50" src="https://img.icons8.com/plasticine/100/react.png">
   <img alt="sass" height="50" src="https://img.icons8.com/color/48/sass.png">
   <img alt="node.js" height="50" src="https://img.icons8.com/fluency/48/node-js.png">
-  <img alt="ux e ui" height="50" src="https://img.icons8.com/color/48/content.png">
-          
-
-
-          
+  <img alt="ux e ui" height="50" src="https://img.icons8.com/color/48/content.png">       
 </div>
 
- 
- 
-
- <div>
+<div>
 <br>
 
 ![ErickyDias GitHub stats](https://github-readme-stats.vercel.app/api?username=dev-erickydias&show_icons=true&theme=tokyonight)
