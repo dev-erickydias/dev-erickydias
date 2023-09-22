@@ -4,7 +4,7 @@
 <br>
 
 <div align="justify">
-  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, <a href="https://github.com/SonsOfNode">SonsOFNode</a> organização fundada por mim e outros desenvolvedores, tendo como objetivo buscar um papel fundamental na educação para as intelizencias artificieais.</p>
+  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, <a href="https://github.com/SonsOfNode">SonsOFNode</a> organização fundada por mim e outros desenvolvedores, tendo como objetivo buscar um papel fundamental na educação para as Inteligência artificial.</p>
 
 <p>Minha paixão é aprender e evoluir constantemente. Estou sempre em busca de novos desafios e oportunidades de crescimento. A tecnologia está em constante evolução, e estou determinado a acompanhá-la de perto.</p>
 
