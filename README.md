@@ -19,7 +19,7 @@
 
 <br>
 
-  <h2 > Tecnologias que eu uso no meu dia a dia </h2>
+  <h2 > Tecnologias que eu uso no meu dia a dia e que estou aprendendo</h2>
 
 <div style="display: inline_block"><br>
   <img alt="Js" height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
