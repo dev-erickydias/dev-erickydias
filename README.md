@@ -1,55 +1,65 @@
+<br clear="both">
+
+<h2 align="center">Hi 👋! My name is Ericky Dias and I'm a programmer from FrontEnd</h2>
+
+###
+
+<br clear="both">
+
 <div align="center">
-
-<h1>Olá, eu sou o Ericky Dias! 🖐️ </h1>
-<br>
-
-<div align="justify">
-  <p >Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, <a href="https://github.com/SonsOfNode">SonsOFNode</a> organização fundada por mim e outros desenvolvedores, tendo como objetivo buscar um papel fundamental na educação para as Inteligência artificial.</p>
-
-<p>Minha paixão é aprender e evoluir constantemente. Estou sempre em busca de novos desafios e oportunidades de crescimento. A tecnologia está em constante evolução, e estou determinado a acompanhá-la de perto.</p>
-
-
-<p>Uma frase que eu gosto muito de dizer</p>
-
-
-> "O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein
-
-<p>Agradeço por ler até aqui. É um prazer compartilhar um pouco da minha jornada como desenvolvedor.</p>
+  <img src="https://github-readme-stats.vercel.app/api?username=dev-erickydias&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=dev-erickydias&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
 </div>
 
-<br>
+###
 
-  <h2 > Tecnologias que eu uso no meu dia a dia e que estou aprendendo</h2>
+<br clear="both">
 
-<div style="display: inline_block"><br>
-  <img alt="Js" height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img alt="HTML" height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img alt="CSS" height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img alt="Python" height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-  <img alt="git" height="50" src="https://img.icons8.com/color/48/git.png">
-  <img alt="react" height="50" src="https://img.icons8.com/plasticine/100/react.png">
-  <img alt="sass" height="50" src="https://img.icons8.com/color/48/sass.png">
-  <img alt="node.js" height="50" src="https://img.icons8.com/fluency/48/node-js.png">
-  <img alt="ux e ui" height="50" src="https://img.icons8.com/color/48/content.png">       
+<img align="right" height="150" src="https://i.imgur.com/1ZvVkDc.gif"  />
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" height="30" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" height="30" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="30" alt="sass logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" height="30" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" height="30" alt="webpack logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" height="30" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="30" alt="nodejs logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="30" alt="figma logo"  />
 </div>
 
-<div>
-<br>
+###
 
-![ErickyDias GitHub stats](https://github-readme-stats.vercel.app/api?username=dev-erickydias&show_icons=true&theme=tokyonight)
-<br>
-<br>
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dev-erickydias&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
-
+<div align="center">
+  <a href="https://www.linkedin.com/in/erickydias/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="linkedin logo"  />
+  </a>
+  <a href="https://discord.com/users/344918178679357441" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="discord logo"  />
+  </a>
 </div>
 
-<h2>Linkes de contatos</h2>
-<div style=>
-<a href="https://www.linkedin.com/in/erickydias/" target="_blank"><img  src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-<a href="https://discord.com/users/344918178679357441" target="_blank"><img  src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"></a>
-<a href="https://github.com/dev-erickydias" target="_blank"><img  src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
-<a href="https://www.instagram.com/ericky_dias/" target="_blank"><img  src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a> 
-</div>
+###
 
-</div>
+<br clear="both">
+
+<p align="left">Me chamo Ericky, tenho 24 anos e sou desenvolvedor full stack. Atualmente, trabalho em projetos de páginas web, onde transformo ideias em realidade. Além disso, sou um membro ativo da, SonsOFNode organização fundada por mim e outros desenvolvedores, tendo como objetivo buscar um papel fundamental na educação para as Inteligência artificial.<br><br>Minha paixão é aprender e evoluir constantemente. Estou sempre em busca de novos desafios e oportunidades de crescimento. A tecnologia está em constante evolução, e estou determinado a acompanhá-la de perto.<br><br>Uma frase que eu gosto muito de dizer<br><br>"O sucesso é a soma de pequenos esforços repetidos dia após dia" - Albert Einstein<br><br>Agradeço por ler até aqui. É um prazer compartilhar um pouco da minha jornada como desenvolvedor.</p>
+
+###
+
+<img src="https://raw.githubusercontent.com/dev-erickydias/dev-erickydias/output/snake.svg" alt="Snake animation" />
+
+###
