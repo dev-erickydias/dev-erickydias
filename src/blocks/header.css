@@ -1,0 +1,126 @@
+/* ===== HERO SECTION ===== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* Blob background decorations */
+.hero__blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(100px); pointer-events: none;
+  opacity: 0.35;
+}
+.hero__blob--1 {
+  width: 500px; height: 500px;
+  background: var(--accent); top: -10%; right: -5%;
+  animation: blob 12s ease-in-out infinite;
+}
+.hero__blob--2 {
+  width: 350px; height: 350px;
+  background: var(--secondary); bottom: 5%; left: -8%;
+  animation: blob 10s ease-in-out infinite reverse;
+}
+.hero__blob--3 {
+  width: 200px; height: 200px;
+  background: var(--accent-dim); top: 40%; left: 30%;
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.15;
+}
+
+.hero__inner {
+  width: 100%; max-width: var(--max-width);
+  margin: 0 auto; padding: 60px var(--space-lg) 40px;
+  display: flex; flex-direction: column-reverse; align-items: center;
+  gap: var(--space-xl); position: relative; z-index: 1;
+}
+@media (min-width: 768px) {
+  .hero__inner {
+    flex-direction: row; justify-content: space-between;
+    padding: 80px var(--space-xl) 60px; gap: var(--space-2xl);
+  }
+}
+
+/* Text content */
+.hero__content { text-align: center; max-width: 560px; }
+@media (min-width: 768px) { .hero__content { text-align: left; } }
+
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px; border-radius: var(--radius-full);
+  background: var(--accent-subtle); border: 1px solid var(--border-hover);
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  margin-bottom: var(--space-lg);
+  animation: fadeInUp 0.5s var(--ease-out) 0.1s both;
+}
+.hero__badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); animation: pulse 2s infinite;
+}
+
+.hero__heading {
+  font-size: clamp(36px, 7vw, 68px);
+  font-weight: 900; letter-spacing: -2px; line-height: 1.05;
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 0.5s var(--ease-out) 0.2s both;
+}
+
+.hero__sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text-secondary); line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  animation: fadeInUp 0.5s var(--ease-out) 0.35s both;
+}
+
+.hero__actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center;
+  animation: fadeInUp 0.5s var(--ease-out) 0.45s both;
+}
+@media (min-width: 768px) { .hero__actions { justify-content: flex-start; } }
+
+.hero__socials {
+  display: flex; gap: 10px; margin-top: var(--space-xl);
+  justify-content: center;
+  animation: fadeInUp 0.5s var(--ease-out) 0.55s both;
+}
+@media (min-width: 768px) { .hero__socials { justify-content: flex-start; } }
+
+.hero__social {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+.hero__social img { width: 18px; height: 18px; }
+.hero__social:hover {
+  transform: translateY(-3px) scale(1.08);
+  border-color: var(--accent); background: var(--accent-subtle);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Photo */
+.hero__photo-container {
+  position: relative; flex-shrink: 0;
+  animation: popIn 0.7s var(--ease-spring) 0.3s both;
+}
+.hero__photo-ring {
+  position: absolute; inset: -6px;
+  border-radius: 50%; padding: 2px;
+  background: var(--gradient); background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  opacity: 0.7;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.hero__photo {
+  width: 220px; height: 220px;
+  border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--bg-primary);
+  position: relative; z-index: 1;
+}
+@media (min-width: 768px) { .hero__photo { width: 300px; height: 300px; } }
+@media (min-width: 1200px) { .hero__photo { width: 360px; height: 360px; } }

@@ -1,0 +1,53 @@
+/* ===== TECH MARQUEE ===== */
+.marquee {
+  overflow: hidden; padding: 20px 0;
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.marquee::before, .marquee::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px;
+  z-index: 2; pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(to right, var(--bg-secondary), transparent); }
+.marquee::after { right: 0; background: linear-gradient(to left, var(--bg-secondary), transparent); }
+
+.marquee__track {
+  display: flex; gap: 40px; width: max-content;
+  animation: marquee 25s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+.marquee__item {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  flex-shrink: 0; padding: 12px 20px;
+  border-radius: var(--radius-md);
+  transition: all var(--duration-normal) var(--ease-spring);
+  cursor: default;
+}
+.marquee__item:hover {
+  transform: translateY(-4px) scale(1.08);
+  background: var(--accent-subtle);
+}
+
+.marquee__item img {
+  width: 44px; height: 44px;
+  transition: all var(--duration-normal);
+  filter: grayscale(0.4) brightness(0.9);
+}
+.marquee__item:hover img {
+  filter: grayscale(0) brightness(1);
+  transform: rotate(-6deg);
+}
+
+.marquee__label {
+  font-size: 10px; font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  opacity: 0; transform: translateY(3px);
+  transition: all var(--duration-fast);
+}
+.marquee__item:hover .marquee__label {
+  opacity: 1; transform: translateY(0); color: var(--accent);
+}

@@ -1,0 +1,94 @@
+/* ===== SKILLS SECTION ===== */
+.skills {
+  padding: var(--space-3xl) 0;
+}
+.skills__inner {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+@media (min-width: 768px) {
+  .skills__inner { padding: 0 var(--space-xl); }
+}
+
+.skills__subtitle {
+  font-size: 16px; color: var(--text-secondary);
+  max-width: 480px; margin-bottom: var(--space-2xl);
+}
+
+/* Grid of 3 cards */
+.skills__grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+@media (min-width: 640px) {
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Card */
+.skills__card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(16px);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.skills__card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.skills__card-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: var(--space-xl);
+}
+.skills__card-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.skills__card-title {
+  font-size: 18px; font-weight: 700;
+}
+
+/* Skill bars */
+.skills__bars {
+  display: flex; flex-direction: column; gap: 14px;
+}
+.skills__bar-row {}
+.skills__bar-info {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.skills__bar-name {
+  font-size: 13px; font-weight: 500; color: var(--text-primary);
+}
+.skills__bar-pct {
+  font-size: 12px; font-weight: 600; color: var(--accent);
+}
+
+.skills__bar-track {
+  width: 100%; height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.skills__bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--gradient);
+  border-radius: var(--radius-full);
+  transition: width 1s var(--ease-out);
+}
+
+/* Animate bars when revealed */
+.skills__card.reveal-scale.visible .skills__bar-fill {
+  width: var(--bar-width);
+}
