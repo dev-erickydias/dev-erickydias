@@ -3,6 +3,18 @@
    Clean · Minimal · Tab-Based · New Palette
    ======================================================== */
 
+/* ===== COMPONENT IMPORTS (must be at top) ===== */
+@import url(./nav__menu.css);
+@import url(./header.css);
+@import url(./hero.css);
+@import url(./about.css);
+@import url(./skills.css);
+@import url(./experience.css);
+@import url(./project.css);
+@import url(./contact.css);
+@import url(./footer.css);
+@import url(./pages.css);
+
 /* ===== RESET ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 ul { list-style: none; }
@@ -237,14 +249,3 @@ body {
 ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 ::selection{background:var(--accent);color:#fff}
 
-/* ===== IMPORTS ===== */
-@import url(./nav__menu.css);
-@import url(./header.css);
-@import url(./hero.css);
-@import url(./about.css);
-@import url(./skills.css);
-@import url(./experience.css);
-@import url(./project.css);
-@import url(./contact.css);
-@import url(./footer.css);
-@import url(./pages.css);
