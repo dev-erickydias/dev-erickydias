@@ -19,7 +19,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="project__card reveal"
+              className={`project__card reveal ${project.isFeatured ? "project__card--featured" : ""}`}
               onClick={() => setSelectedProject(project)}
             >
               <span className="project__card_number">
@@ -29,7 +29,7 @@ export default function Projects() {
               <div className="project__card_header">
                 <svg
                   className="project__card_icon"
-                  width="36" height="36"
+                  width="32" height="32"
                   viewBox="0 0 24 24" fill="none"
                   stroke="var(--accent)" strokeWidth="1.5"
                   strokeLinecap="round" strokeLinejoin="round"
@@ -38,13 +38,22 @@ export default function Projects() {
                 </svg>
               </div>
 
+              {project.isFeatured && (
+                <span className="project__card_featured">Featured</span>
+              )}
+
+              <span className="project__card_category">{project.category}</span>
+
               <h3 className="project__card_title font-display">{project.name}</h3>
               <p className="project__card_text">{project.description}</p>
 
               <div className="project__card_techs">
-                {project.technologies.map((tech, i) => (
+                {project.technologies.slice(0, 4).map((tech, i) => (
                   <span key={i} className="project__card_tech">{tech}</span>
                 ))}
+                {project.technologies.length > 4 && (
+                  <span className="project__card_tech">+{project.technologies.length - 4}</span>
+                )}
               </div>
             </div>
           ))}

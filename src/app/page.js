@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import projects from "../data/projects";
 
 /* ── top skills for preview ── */
 const topSkills = [
@@ -10,31 +11,12 @@ const topSkills = [
   "Express", "MongoDB", "Tailwind CSS", "Git", "Docker",
 ];
 
-/* ── featured projects (first 3) ── */
-const featured = [
-  {
-    name: "SonsOfNode",
-    desc: "AI education platform for developers — co-founded initiative addressing educational challenges in Brazil.",
-    tags: ["Python", "AI/ML", "Jupyter"],
-    href: "https://github.com/SonsOfNode",
-  },
-  {
-    name: "ConnectEco",
-    desc: "Sustainable tech platform built collaboratively with 164+ commits. Mobile-first approach.",
-    tags: ["React", "Next.js", "CSS"],
-    href: "https://connecteco.vercel.app",
-  },
-  {
-    name: "Heavens Hair",
-    desc: "Landing page for the beauty salon featuring dynamic routing and responsive design.",
-    tags: ["Next.js", "JavaScript", "CSS"],
-    href: "https://link-for-instagram.vercel.app",
-  },
-];
+/* ── featured projects from data ── */
+const featured = projects.filter((p) => p.isFeatured).slice(0, 3);
 
 /* ── experience highlights ── */
 const highlights = [
-  { role: "Co-founder", company: "SonsOfNode", period: "2024 — Present" },
+  { role: "Co-founder", company: "Fronnexus", period: "2024 — Present" },
   { role: "Co-founder", company: "ConnectEco", period: "2023 — Present" },
   { role: "Co-owner", company: "Heavens Hair", period: "2022 — Present" },
 ];
@@ -62,7 +44,7 @@ export default function Home() {
               },
               {
                 title: "Experience",
-                desc: "Co-founder of SonsOfNode & ConnectEco. Co-owner of Heavens Hair in Amsterdam.",
+                desc: "Co-founder of Fronnexus & ConnectEco. Co-owner of Heavens Hair in Amsterdam.",
                 href: "/experience",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -72,7 +54,7 @@ export default function Home() {
               },
               {
                 title: "Projects",
-                desc: "6+ projects built with React, Next.js, Node.js, MongoDB, and more.",
+                desc: "9+ projects built with React, Next.js, TypeScript, Supabase, and more.",
                 href: "/projects",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -130,7 +112,7 @@ export default function Home() {
                 <span className="home-preview__stat-label">Years</span>
               </div>
               <div className="home-preview__stat">
-                <span className="home-preview__stat-num">6+</span>
+                <span className="home-preview__stat-num">9+</span>
                 <span className="home-preview__stat-label">Projects</span>
               </div>
               <div className="home-preview__stat">
@@ -217,15 +199,15 @@ export default function Home() {
             {featured.map((p) => (
               <a
                 key={p.name}
-                href={p.href}
+                href={p.deploy}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="home-preview__project reveal-scale"
               >
                 <h3 className="home-preview__project-name">{p.name}</h3>
-                <p className="home-preview__project-desc">{p.desc}</p>
+                <p className="home-preview__project-desc">{p.description}</p>
                 <div className="home-preview__project-tags">
-                  {p.tags.map((t) => (
+                  {p.technologies.slice(0, 3).map((t) => (
                     <span key={t} className="home-preview__project-tag">{t}</span>
                   ))}
                 </div>

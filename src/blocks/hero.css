@@ -1,53 +1,80 @@
-/* ===== TECH MARQUEE ===== */
+/* ===== TECH MARQUEE — Atelier Noir ===== */
 .marquee {
-  overflow: hidden; padding: 20px 0;
+  overflow: hidden;
+  padding: 24px 0;
   position: relative;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
-.marquee::before, .marquee::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 100px;
-  z-index: 2; pointer-events: none;
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
 }
-.marquee::before { left: 0; background: linear-gradient(to right, var(--bg-secondary), transparent); }
-.marquee::after { right: 0; background: linear-gradient(to left, var(--bg-secondary), transparent); }
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
 
 .marquee__track {
-  display: flex; gap: 40px; width: max-content;
-  animation: marquee 25s linear infinite;
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: marquee 30s linear infinite;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 
 .marquee__item {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  flex-shrink: 0; padding: 12px 20px;
-  border-radius: var(--radius-md);
-  transition: all var(--duration-normal) var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-normal) var(--ease-out);
   cursor: default;
 }
 .marquee__item:hover {
-  transform: translateY(-4px) scale(1.08);
+  transform: translateY(-4px);
   background: var(--accent-subtle);
 }
 
 .marquee__item img {
-  width: 44px; height: 44px;
+  width: 40px;
+  height: 40px;
   transition: all var(--duration-normal);
-  filter: grayscale(0.4) brightness(0.9);
+  filter: grayscale(0.6) brightness(0.7);
+  opacity: 0.6;
 }
 .marquee__item:hover img {
   filter: grayscale(0) brightness(1);
-  transform: rotate(-6deg);
+  opacity: 1;
 }
 
 .marquee__label {
-  font-size: 10px; font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
   color: var(--text-tertiary);
-  text-transform: uppercase; letter-spacing: 1.5px;
-  opacity: 0; transform: translateY(3px);
-  transition: all var(--duration-fast);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 .marquee__item:hover .marquee__label {
-  opacity: 1; transform: translateY(0); color: var(--accent);
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--accent);
 }

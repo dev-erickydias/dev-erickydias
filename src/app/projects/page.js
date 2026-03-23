@@ -12,7 +12,7 @@ export default function ProjectsPage() {
             Featured <span className="gradient-text">Projects</span>
           </h1>
           <p className="page-header__sub reveal">
-            Real-world applications built with modern technologies.
+            Real-world applications built with modern technologies and shipped to production.
           </p>
         </div>
       </div>

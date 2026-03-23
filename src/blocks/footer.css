@@ -1,65 +1,139 @@
-/* ===== FOOTER ===== */
+/* ===== FOOTER — Atelier Noir ===== */
 .footer {
   padding: var(--space-2xl) 0 var(--space-xl);
   border-top: 1px solid var(--border-subtle);
+  position: relative;
 }
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+}
+
 .footer__inner {
-  max-width: var(--max-width); margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 var(--space-lg);
-  display: flex; flex-direction: column; align-items: center;
-  gap: var(--space-xl); text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  text-align: center;
 }
 @media (min-width: 768px) {
   .footer__inner {
-    flex-direction: row; justify-content: space-between;
-    padding: 0 var(--space-xl); text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 var(--space-xl);
+    text-align: left;
   }
 }
 
 .footer__brand {
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .footer__name {
-  font-size: 18px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 .footer__name span { color: var(--accent); }
 .footer__tagline {
-  font-size: 13px; color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .footer__links {
-  display: flex; gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+}
+@media (min-width: 768px) {
+  .footer__links { gap: 28px; }
 }
 .footer__link {
-  font-size: 13px; font-weight: 500; color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
   transition: color var(--duration-fast);
+  position: relative;
 }
-.footer__link:hover { color: var(--accent); }
+.footer__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width var(--duration-normal);
+}
+.footer__link:hover {
+  color: var(--accent);
+}
+.footer__link:hover::after {
+  width: 100%;
+}
 
-.footer__socials { display: flex; gap: 10px; }
-.footer__social {
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: var(--radius-full);
-  background: var(--accent-subtle);
-  border: 1px solid rgba(139,92,246,0.1);
-  transition: all var(--duration-normal) var(--ease-spring);
+.footer__socials {
+  display: flex;
+  gap: 10px;
 }
-.footer__social img { width: 16px; height: 16px; }
+.footer__social {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.footer__social img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+  transition: opacity var(--duration-fast);
+}
 .footer__social:hover {
   transform: translateY(-3px);
-  border-color: var(--accent); background: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent);
   box-shadow: var(--shadow-glow);
 }
-.footer__social:hover img { filter: brightness(10); }
+.footer__social:hover img {
+  opacity: 1;
+  filter: brightness(10);
+}
 
 .footer__bottom {
-  width: 100%; max-width: var(--max-width); margin: 0 auto;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: var(--space-lg) var(--space-lg) 0;
   margin-top: var(--space-lg);
   border-top: 1px solid var(--border-subtle);
   text-align: center;
 }
 .footer__copy {
-  font-size: 12px; color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-tertiary);
+  letter-spacing: 1px;
 }

@@ -1,9 +1,22 @@
-/* ===== SKILLS SECTION ===== */
+/* ===== SKILLS SECTION — Atelier Noir ===== */
 .skills {
   padding: var(--space-3xl) 0;
+  background: var(--bg-secondary);
+  position: relative;
 }
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+}
+
 .skills__inner {
-  max-width: var(--max-width); margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 var(--space-lg);
 }
 @media (min-width: 768px) {
@@ -11,13 +24,17 @@
 }
 
 .skills__subtitle {
-  font-size: 16px; color: var(--text-secondary);
-  max-width: 480px; margin-bottom: var(--space-2xl);
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin-bottom: var(--space-2xl);
+  line-height: 1.7;
 }
 
 /* Grid of 3 cards */
 .skills__grid {
-  display: grid; grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
 }
 @media (min-width: 640px) {
@@ -29,63 +46,94 @@
 
 /* Card */
 .skills__card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  backdrop-filter: blur(16px);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg);
   transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.skills__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height var(--duration-slow) var(--ease-out);
 }
 .skills__card:hover {
   border-color: var(--border-hover);
   transform: translateY(-4px);
   box-shadow: var(--shadow-glow-lg);
 }
+.skills__card:hover::before {
+  height: 100%;
+}
 
 .skills__card-header {
-  display: flex; align-items: center; gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-bottom: var(--space-xl);
 }
 .skills__card-icon {
-  width: 44px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
   background: var(--accent-subtle);
   color: var(--accent);
   flex-shrink: 0;
 }
 .skills__card-title {
-  font-size: 18px; font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 /* Skill bars */
 .skills__bars {
-  display: flex; flex-direction: column; gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.skills__bar-row {}
+
 .skills__bar-info {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 6px;
 }
 .skills__bar-name {
-  font-size: 13px; font-weight: 500; color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
 }
 .skills__bar-pct {
-  font-size: 12px; font-weight: 600; color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
 }
 
 .skills__bar-track {
-  width: 100%; height: 6px;
+  width: 100%;
+  height: 3px;
   background: var(--border-subtle);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xs);
   overflow: hidden;
 }
 .skills__bar-fill {
   height: 100%;
   width: 0;
-  background: var(--gradient);
-  border-radius: var(--radius-full);
-  transition: width 1s var(--ease-out);
+  background: var(--accent);
+  border-radius: var(--radius-xs);
+  transition: width 1.2s var(--ease-expo);
 }
 
 /* Animate bars when revealed */

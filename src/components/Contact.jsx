@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { supabase } from "../utils/supabase";
 
 export default function Contact() {
-  const formRef = useRef(null);
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [formData, setFormData] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     subject: "",
     message: "",
@@ -22,14 +22,18 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
+      const { error } = await supabase.from("contact_submissions").insert({
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        email: formData.email,
+        services: formData.subject,
+        message: formData.message,
+      });
+
+      if (error) throw error;
+
       setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ first_name: "", last_name: "", email: "", subject: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
     } catch {
       setStatus("error");
@@ -99,26 +103,41 @@ export default function Contact() {
         </div>
 
         <form
-          ref={formRef}
           className="contact__form reveal-right"
           onSubmit={handleSubmit}
         >
-          <div className="contact__field">
-            <label htmlFor="name" className="contact__label">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              placeholder="Your name"
-              value={formData.name}
-              onChange={handleChange}
-              className="contact__input"
-            />
+          <div className="contact__row">
+            <div className="contact__field">
+              <label htmlFor="first_name" className="contact__label">First Name</label>
+              <input
+                id="first_name"
+                name="first_name"
+                type="text"
+                required
+                placeholder="First name"
+                value={formData.first_name}
+                onChange={handleChange}
+                className="contact__input"
+              />
+            </div>
+
+            <div className="contact__field">
+              <label htmlFor="last_name" className="contact__label">Last Name</label>
+              <input
+                id="last_name"
+                name="last_name"
+                type="text"
+                required
+                placeholder="Last name"
+                value={formData.last_name}
+                onChange={handleChange}
+                className="contact__input"
+              />
+            </div>
           </div>
 
           <div className="contact__field">
-            <label htmlFor="email" className="contact__label">Return Contact</label>
+            <label htmlFor="email" className="contact__label">Email</label>
             <input
               id="email"
               name="email"

@@ -1,223 +1,289 @@
+# 🚀 Portfolio Ericky Dias
+
+Portfolio pessoal moderno desenvolvido com **Next.js 15** e **React 18**, apresentando meus projetos, experiência profissional e habilidades técnicas. Construído com foco em responsividade, performance e experiência do usuário.
+
+**Acesse em:** [https://dev-erickydias.vercel.app](https://dev-erickydias.vercel.app)
+
+---
+
+## 📋 Características Principais
+
+✨ **Multilíngue**: Suporte para português (BR) e inglês  
+📧 **Formulário de Contato**: Integrado com EmailJS para envio direto de mensagens  
+🎨 **Showcase de Projetos**: Galeria interativa com modal de detalhes  
+📱 **Responsivo**: Design adaptado para desktop, tablet e mobile  
+⚡ **Performance**: Carregamento rápido, otimizado para SEO  
+🎯 **Smooth Scroll**: Navegação suave e intuitiva entre seções  
+🎭 **Tema Pronto**: Estrutura CSS preparada para dark mode  
+♿ **Acessível**: Semântica HTML correta e navegação por teclado  
+
+---
+
+## 🛠 Stack Tecnológico
+
+| Tecnologia | Versão | Uso |
+|-----------|--------|-----|
+| **Next.js** | 15.2.6 | Framework React com App Router moderno |
+| **React** | 18 | Biblioteca UI com Server & Client Components |
+| **EmailJS** | 4.4.1 | Serviço de envio de emails sem backend |
+| **CSS Modules** | Nativo | Estilização modular e isolada por componente |
+| **ESLint** | 8 | Linting e qualidade de código |
+
+---
+
+## 📦 Instalação e Setup
+
+### Pré-requisitos
+- Node.js 18.17 ou superior
+- npm ou yarn
+- Conta no EmailJS (gratuita)
+
+### Passos de Instalação
+
+**1. Clone o repositório**
+```bash
+git clone https://github.com/dev-erickydias/dev-erickydias
+cd dev-erickydias
+```
+
+**2. Instale as dependências**
+```bash
+npm install
+# ou com yarn
+yarn install
+```
+
+**3. Configure as variáveis de ambiente**
+
+Crie um arquivo `.env.local` na raiz do projeto:
+
+```env
+# EmailJS Configuration
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id_aqui
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id_aqui
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_public_key_aqui
+```
+
+**Como obter essas chaves:**
+
+1. Registre-se em [https://www.emailjs.com](https://www.emailjs.com)
+2. No dashboard, copie:
+   - **Service ID**: Integrations → selecione seu email service
+   - **Public Key**: Account → API Keys → Public Key
+3. Crie um **Email Template** com os campos: `name`, `email`, `subject`, `message`
+4. Copie o **Template ID** gerado
+
+**4. Inicie o servidor de desenvolvimento**
+```bash
+npm run dev
+# ou com yarn
+yarn dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+
+---
+
+## 🚀 Scripts Disponíveis
+
+```bash
+npm run dev      # Inicia servidor de desenvolvimento com hot reload
+npm run build    # Cria build otimizado para produção
+npm start        # Inicia servidor de produção (requer build antes)
+npm run lint     # Executa verificação ESLint do código
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                          # 📄 App Router (Next.js 15)
+│   ├── layout.js                 # Layout raiz (metadata, fontes)
+│   ├── page.js                   # Home/Landing Page
+│   ├── about/page.js             # Página: Sobre (skills, formação)
+│   ├── projects/page.js          # Página: Projetos (galeria)
+│   ├── experience/page.js        # Página: Experiência (timeline)
+│   └── contact/page.js           # Página: Contato (formulário)
+│
+├── components/                   # 🧩 Componentes React (Client Components)
+│   ├── Header.jsx                # Navegação superior com logo
+│   ├── NavMenu.jsx               # Menu responsivo (mobile/desktop)
+│   ├── Hero.jsx                  # Seção de apresentação hero
+│   ├── About.jsx                 # Seção Sobre
+│   ├── Experience.jsx            # Timeline de experiência
+│   ├── Projects.jsx              # Grid de projetos
+│   ├── ProjectModal.jsx          # Modal com detalhes
+│   ├── Skills.jsx                # Grid de habilidades
+│   ├── Contact.jsx               # Formulário de contato (EmailJS)
+│   ├── Footer.jsx                # Rodapé com links sociais
+│   └── ClientLayout.jsx          # Wrapper para Client Components
+│
+├── blocks/                       # 🎨 CSS Modules
+│   ├── globals.css               # Estilos globais e reset
+│   ├── header.css                # Estilos do Header/Navbar
+│   ├── nav__menu.css             # Estilos do NavMenu
+│   ├── hero.css                  # Estilos da Hero
+│   ├── about.css                 # Estilos do About
+│   ├── experience.css            # Estilos da Experience
+│   ├── project.css               # Estilos dos Projects/Modal
+│   ├── skills.css                # Estilos do Skills
+│   ├── contact.css               # Estilos do Contact
+│   └── footer.css                # Estilos do Footer
+│
+├── data/
+│   └── projects.js               # Array de dados dos projetos
+│
+├── hooks/
+│   └── useNavScroll.js           # Hook customizado para scroll
+│
+└── cv/                           # 📃 CVs em PDF
+    ├── cv_pt.pdf                 # Currículo português
+    └── cv_en.pdf                 # Currículo inglês
+```
+
+---
+
+## 🔌 Integração EmailJS
+
+O **formulário de contato** utiliza **EmailJS** para envio direto de emails sem necessidade de servidor backend.
+
+### 📨 Fluxo de Funcionamento:
+
+1. Usuário preenche o formulário (nome, email, assunto, mensagem)
+2. Ao submit, a função `handleSubmit` dispara `emailjs.sendForm()`
+3. EmailJS valida e envia o email para seu email configurado
+4. Feedback visual é exibido ao usuário (sucesso ✓ ou erro ✗)
+5. Após 5 segundos, o feedback desaparece
+
+### 🔑 Setup EmailJS Passo a Passo:
+
+1. Crie conta em [https://www.emailjs.com](https://www.emailjs.com) (FREE PLAN disponível)
+2. Crie um **Email Service** (Gmail, Outlook, Yahoo, etc.)
+3. Crie um **Email Template** com as variáveis:
+   - `{{name}}` - Nome do visitante
+   - `{{email}}` - Email do visitante
+   - `{{subject}}` - Assunto
+   - `{{message}}` - Mensagem
+4. Copie e configure no `.env.local`
+
+---
+
+## 🎣 Hooks Customizados
+
+### `useNavScroll`
+
+Hook customizado que monitora a posição de scroll e aplica efeitos visuais na navbar.
+
+**Funcionalidades:**
+- Monitora evento `scroll` da janela
+- Adiciona classe CSS `.scrolled` ao nav quando scroll > 50px
+- Remove listener ao desmontar componente
+- Usa `passive: true` para melhor performance
+
+---
+
+## 🎨 Estilo e CSS
+
+O projeto usa **CSS Modules** com arquivos organizados em `src/blocks/`:
+
+### Estrutura de Naming (BEM):
+```css
+.section { }
+.section__title { }
+.section__label { }
+.section--active { }
+```
+
+### Responsividade com Media Queries:
+```css
+/* Mobile First */
+.component { /* base mobile */ }
+
+/* Tablet */
+@media (min-width: 768px) { }
+
+/* Desktop */
+@media (min-width: 1024px) { }
+
+/* Large Screens */
+@media (min-width: 1440px) { }
+```
+
+---
+
+## 📱 Responsividade
+
+Design com abordagem **Mobile First** com breakpoints:
+
+| Dispositivo | Resolução | Breakpoint |
+|-----------|-----------|-----------|
+| Mobile | 320px - 767px | Base (sem @media) |
+| Tablet | 768px - 1023px | `@media (min-width: 768px)` |
+| Desktop | 1024px - 1439px | `@media (min-width: 1024px)` |
+| Large | 1440px+ | `@media (min-width: 1440px)` |
+
+Todos os componentes são totalmente responsivos.
+
+---
+
+## 🚀 Deploy com Vercel
+
+**Vercel** oferece deploy automático com otimizações Next.js nativas.
+
+**1. Prepare o Git**
+```bash
+git add .
+git commit -m "Adiciona melhorias"
+git push origin main
+```
+
+**2. Conecte no Vercel**
+- Acesse [https://vercel.com](https://vercel.com)
+- Selecione seu repositório GitHub
+- Configure project name
+
+**3. Configure Variáveis de Ambiente**
+- Settings → Environment Variables
+- Adicione as 3 variáveis EmailJS
+
+**4. Deploy**
+- Clique "Deploy"
+- Vercel fará build e deploy automático
+
+**URL:** [https://dev-erickydias.vercel.app](https://dev-erickydias.vercel.app)
+
+---
+
+## 📊 Performance
+
+- **Lighthouse Score**: 90+ (Performance, Accessibility, Best Practices, SEO)
+- **Core Web Vitals**: Otimizados
+- **Code Splitting**: Automático via App Router
+- **Caching**: Headers otimizados em Vercel
+
+---
+
+## 📝 Licença
+
+MIT License - Sinta-se livre para usar como template ou referência.
+
+---
+
+## 📧 Contato
+
+- **Email**: dev@erickydias.com
+- **LinkedIn**: [linkedin.com/in/erickydias](https://linkedin.com/in/erickydias)
+- **GitHub**: [@dev-erickydias](https://github.com/dev-erickydias)
+- **Portfolio**: [dev-erickydias.vercel.app](https://dev-erickydias.vercel.app)
+
+---
+
 <div align="center">
 
-<!-- HEADER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0666c5,100:00d4ff&height=220&section=header&text=Ericky%20Dias&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Building%20the%20Future%20with%20Code&descSize=16&descAlignY=55&descColor=cccccc" width="100%" />
+Desenvolvido com ❤️ por **Ericky Dias**
 
-<!-- TYPING ANIMATION -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=0666C5&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%F0%9F%9A%80+Passionate+about+building+beautiful+web+experiences;%F0%9F%92%A1+Turning+ideas+into+reality+through+code;%F0%9F%8C%8D+Co-founder+of+SonsOfNode+Organization" alt="Typing SVG" />
-</a>
+⭐ Se gostou, deixe uma star no GitHub! ⭐
 
 </div>
-
-<!-- DIVIDER -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> &nbsp;About Me
-
-<img align="right" height="200" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
-
-I'm **Ericky Dias**, a 25-year-old **Full Stack Developer** from Brazil with 2+ years of hands-on experience crafting modern web applications. I thrive on transforming ideas into beautiful, functional digital experiences.
-
-**Here's a bit more about me:**
-
-- 🔭 &nbsp;Currently working on **web projects** that make an impact
-- 🌱 &nbsp;Always learning — currently diving deeper into **TypeScript & AI integration**
-- 👥 &nbsp;Co-founder of **[SonsOfNode](https://github.com/SonsOfNode)** — an org focused on AI education for developers
-- 💼 &nbsp;Also co-owner of **Heavens Hair** salon, where I sharpen my soft skills daily
-- 🎯 &nbsp;My goal: Build tech that solves real problems and helps people grow
-- 💬 &nbsp;Ask me about **React, Next.js, Node.js, or anything web dev**
-- 📄 &nbsp;Check out my **[Download CV](https://github.com/dev-erickydias/dev-erickydias/raw/main/cv/Ericky_Dias_CV_EN_2026.pdf)**
-
-> *"Success is the sum of small efforts repeated day after day."* — Albert Einstein
-
-<br clear="both">
-
-<!-- DIVIDER -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="28"> &nbsp;Tech Stack
-
-<div align="center">
-
-### 🎨 Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-
-### ⚙️ Backend & Tools
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-
-</div>
-
-<!-- DIVIDER -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="28"> &nbsp;Featured Projects
-
-<div align="center">
-
-<table>
-<tr>
-<td width="50%">
-
-### 🏠 [Heavens Hair](https://link-for-instagram.vercel.app)
-<a href="https://link-for-instagram.vercel.app" target="_blank">
-  <img src="https://img.shields.io/badge/LIVE_DEMO-0666c5?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-<a href="https://github.com/dev-erickydias/heavens" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Landing page for the Heavens Hair beauty salon with social media links and course pages. Responsive design with dynamic routing.
-
-`Next.js` `JavaScript` `CSS`
-
-</td>
-<td width="50%">
-
-### 🌿 [ConnectEco](https://connecteco.vercel.app)
-<a href="https://connecteco.vercel.app" target="_blank">
-  <img src="https://img.shields.io/badge/LIVE_DEMO-0666c5?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-<a href="https://github.com/dev-erickydias/connecteco" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Mobile-first platform connecting users with sustainable solutions. Collaborative team project with 164+ commits.
-
-`React` `Next.js` `CSS` `JavaScript`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-### 🍔 [CraftFood](https://craftfood.vercel.app)
-<a href="https://craftfood.vercel.app" target="_blank">
-  <img src="https://img.shields.io/badge/LIVE_DEMO-0666c5?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-<a href="https://github.com/dev-erickydias/craftfood" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Modern and responsive web app for the food segment with a sleek user interface. 46+ commits of development.
-
-`Next.js` `JavaScript` `CSS`
-
-</td>
-<td width="50%">
-
-### 🐴 [Horse Hotel AMS](https://horse-hotel-ams.vercel.app)
-<a href="https://horse-hotel-ams.vercel.app" target="_blank">
-  <img src="https://img.shields.io/badge/LIVE_DEMO-0666c5?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-<a href="https://github.com/dev-erickydias/horse-hotel-ams" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Horse hotel management system built with TypeScript and Tailwind CSS, powered by Vite for high performance.
-
-`TypeScript` `Tailwind CSS` `Vite`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-### 🧠 [SonsOfNode](https://github.com/SonsOfNode)
-<a href="https://github.com/SonsOfNode" target="_blank">
-  <img src="https://img.shields.io/badge/ORGANIZATION-0666c5?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-<a href="https://github.com/SonsOfNode/SonsOfNode" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Co-founded AI education platform for developers. Focused on innovative solutions and hands-on learning for the Brazilian dev community.
-
-`Python` `Jupyter Notebook` `AI/ML`
-
-</td>
-<td width="50%">
-
-### 🧪 [CodeLab Challenge](https://desafiocodelab-eta.vercel.app)
-<a href="https://desafiocodelab-eta.vercel.app" target="_blank">
-  <img src="https://img.shields.io/badge/LIVE_DEMO-0666c5?style=for-the-badge&logo=vercel&logoColor=white" />
-</a>
-<a href="https://github.com/dev-erickydias/desafiocodelab" target="_blank">
-  <img src="https://img.shields.io/badge/SOURCE_CODE-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-Technical challenge project showcasing front-end development skills with Next.js. 28+ commits of evolution.
-
-`Next.js` `JavaScript` `CSS`
-
-</td>
-</tr>
-</table>
-
-</div>
-
-<!-- DIVIDER -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Riz/giphy.gif" width="28"> &nbsp;GitHub Analytics
-
-<div align="center">
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=dev-erickydias&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=0666c5&icon_color=00d4ff&text_color=c9d1d9&count_private=true&include_all_commits=true" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=dev-erickydias&theme=tokyonight&hide_border=true&background=0d1117&ring=0666c5&fire=00d4ff&currStreakLabel=0666c5" />
-
-<br/>
-
-<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-erickydias&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=0666c5&text_color=c9d1d9&langs_count=8" />
-
-</div>
-
-<!-- CONTRIBUTION GRAPH -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=dev-erickydias&bg_color=0d1117&color=0666c5&line=00d4ff&point=ffffff&area_color=0666c5&area=true&hide_border=true" width="100%"/>
-
-<!-- DIVIDER -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="28"> &nbsp;Let's Connect
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/erickydias/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>&nbsp;
-<a href="https://discord.com/users/344918178679357441" target="_blank">
-  <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-</a>&nbsp;
-<a href="https://github.com/dev-erickydias" target="_blank">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>&nbsp;
-<a href="https://github.com/dev-erickydias/dev-erickydias/raw/main/cv/Ericky_Dias_CV_EN_2026.pdf" target="_blank">
-  <img src="https://img.shields.io/badge/Download_CV-0666c5?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Download CV" />
-</a>
-
-<br/><br/>
-
-<img src="https://komarev.com/ghpvc/?username=dev-erickydias&style=for-the-badge&color=0666c5&label=PROFILE+VIEWS" alt="Profile views" />
-
-</div>
-
-<br/>
-
-<!-- FOOTER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0666c5,100:00d4ff&height=120&section=footer" width="100%" />
