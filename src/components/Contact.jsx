@@ -22,6 +22,8 @@ export default function Contact() {
     setStatus("sending");
 
     try {
+      if (!supabase) throw new Error("Supabase not configured");
+
       const { error } = await supabase.from("contact_submissions").insert({
         first_name: formData.first_name,
         last_name: formData.last_name,
