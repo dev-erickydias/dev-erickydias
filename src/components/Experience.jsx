@@ -1,5 +1,3 @@
-"use client";
-
 const experiences = [
   {
     role: "Co-founder",
@@ -73,18 +71,17 @@ const education = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="experience" aria-label="Professional experience">
       <div className="experience__inner">
         <div className="section__label reveal">Experience</div>
         <h2 className="section__title reveal">
           Where I&apos;ve <span className="gradient-text">worked</span>
         </h2>
 
-        {/* Timeline */}
         <div className="experience__timeline">
           {experiences.map((exp, i) => (
-            <div key={i} className="experience__item reveal">
-              <div className="experience__dot" />
+            <article key={i} className="experience__item reveal">
+              <div className="experience__dot" aria-hidden="true" />
               <div className="experience__card">
                 <div className="experience__card-top">
                   <div>
@@ -92,7 +89,7 @@ export default function Experience() {
                     <div className="experience__company">{exp.company}</div>
                   </div>
                   <div className="experience__meta">
-                    <span className="experience__period">{exp.period}</span>
+                    <time className="experience__period">{exp.period}</time>
                     <span className="experience__location">{exp.location}</span>
                   </div>
                 </div>
@@ -103,14 +100,13 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Education */}
-        <div className="experience__edu-section reveal">
+        <div className="experience__edu-section reveal" aria-label="Education and certifications">
           <h3 className="experience__edu-heading">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
@@ -127,30 +123,29 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Languages */}
-        <div className="experience__langs reveal">
+        <div className="experience__langs reveal" aria-label="Spoken languages">
           <h3 className="experience__langs-heading">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10" />
               <line x1="2" y1="12" x2="22" y2="12" />
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             Languages
           </h3>
-          <div className="experience__langs-list">
+          <dl className="experience__langs-list">
             <div className="experience__lang">
-              <span className="experience__lang-name">Portuguese</span>
-              <span className="experience__lang-level">Native</span>
+              <dt className="experience__lang-name">Portuguese</dt>
+              <dd className="experience__lang-level">Native</dd>
             </div>
             <div className="experience__lang">
-              <span className="experience__lang-name">English</span>
-              <span className="experience__lang-level">Conversational</span>
+              <dt className="experience__lang-name">English</dt>
+              <dd className="experience__lang-level">Conversational</dd>
             </div>
             <div className="experience__lang">
-              <span className="experience__lang-name">Spanish</span>
-              <span className="experience__lang-level">Conversational</span>
+              <dt className="experience__lang-name">Spanish</dt>
+              <dd className="experience__lang-level">Conversational</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </div>
     </section>

@@ -11,8 +11,11 @@ export default function ClientLayout({ children }) {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <NavMenu title="Ericky Dias" />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer />
     </>
   );

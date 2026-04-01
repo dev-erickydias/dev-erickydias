@@ -100,10 +100,10 @@ img { max-width: 100%; display: block; }
   --max-width: 1200px;
   --nav-height: 68px;
 
-  /* Font families */
-  --font-display: 'Playfair Display', 'Georgia', serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Font families — powered by next/font CSS variables */
+  --font-display: var(--font-display-nf, 'Playfair Display'), 'Georgia', serif;
+  --font-body: var(--font-body-nf, 'DM Sans'), 'Helvetica Neue', sans-serif;
+  --font-mono: var(--font-mono-nf, 'JetBrains Mono'), 'Fira Code', monospace;
 }
 
 /* ===== LIGHT THEME ===== */
@@ -142,6 +142,48 @@ img { max-width: 100%; display: block; }
     --glass-border: rgba(0, 0, 0, 0.05);
     --glass-bg-strong: rgba(255, 255, 255, 0.92);
   }
+}
+
+/* ===== SKIP LINK (Accessibility) ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--text-inverse);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 12px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ===== FOCUS VISIBLE ===== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ===== BODY ===== */

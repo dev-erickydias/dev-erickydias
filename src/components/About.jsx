@@ -1,26 +1,29 @@
 "use client";
+
+import Image from "next/image";
 import handleDownload from "../utils/cvDownLoade";
 
 export default function About() {
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" aria-label="About Ericky Dias">
       <div className="about__inner">
-        {/* Sidebar */}
         <div className="about__sidebar reveal-left">
           <div className="about__photo-wrap">
-            <img
+            <Image
               className="about__photo"
               src="/erickynew.jpg"
-              alt="Ericky Dias"
+              alt="Ericky Dias — Full Stack Developer"
+              width={380}
+              height={380}
+              quality={85}
             />
           </div>
           <button className="btn-primary about__download" onClick={handleDownload}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download CV
           </button>
         </div>
 
-        {/* Content */}
         <div className="about__content">
           <div className="section__label about__label reveal">About</div>
           <h2 className="about__heading reveal">
@@ -51,20 +54,20 @@ export default function About() {
             along with courses at Origamid and Alura.
           </p>
 
-          <div className="about__stats reveal">
-            <div className="about__stat">
+          <div className="about__stats reveal" role="list" aria-label="Key statistics">
+            <div className="about__stat" role="listitem">
               <div className="about__stat-number">2+</div>
               <div className="about__stat-label">Years Exp</div>
             </div>
-            <div className="about__stat">
+            <div className="about__stat" role="listitem">
               <div className="about__stat-number">9+</div>
               <div className="about__stat-label">Projects</div>
             </div>
-            <div className="about__stat">
+            <div className="about__stat" role="listitem">
               <div className="about__stat-number">3</div>
               <div className="about__stat-label">Languages</div>
             </div>
-            <div className="about__stat">
+            <div className="about__stat" role="listitem">
               <div className="about__stat-number">3</div>
               <div className="about__stat-label">Countries</div>
             </div>
