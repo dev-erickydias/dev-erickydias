@@ -1,9 +1,11 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import projects from "../data/projects";
+
+const API_URL = "https://api-pearl-nine-29.vercel.app/api/github?user=dev-erickydias&sort=updated&order=desc&per_page=3";
 
 /* ── top skills for preview ── */
 const topSkills = [
@@ -11,8 +13,11 @@ const topSkills = [
   "Express", "MongoDB", "Tailwind CSS", "Git", "Docker",
 ];
 
-/* ── featured projects from data ── */
-const featured = projects.filter((p) => p.isFeatured).slice(0, 3);
+function formatName(name) {
+  return name
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 /* ── experience highlights ── */
 const highlights = [
@@ -22,6 +27,27 @@ const highlights = [
 ];
 
 export default function Home() {
+  const [featured, setFeatured] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        setFeatured(
+          (data.projects || []).map((repo) => ({
+            name: formatName(repo.name),
+            description: repo.description || "No description available.",
+            technologies: [
+              repo.language,
+              ...(repo.topics || []),
+            ].filter(Boolean),
+            deploy: repo.homepage || repo.url,
+          }))
+        );
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <>
       <Header />
