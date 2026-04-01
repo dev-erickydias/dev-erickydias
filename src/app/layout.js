@@ -133,8 +133,13 @@ export default function RootLayout({ children }) {
       className={`${dmSans.variable} ${playfair.variable} ${jetbrainsMono.variable} ${caveat.variable}`}
     >
       <head>
-        <meta name="theme-color" content="#D4A853" />
+        <meta name="theme-color" content="#818CF8" />
         <link rel="preconnect" href="https://api-pearl-nine-29.vercel.app" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t){document.documentElement.dataset.theme=t}else if(window.matchMedia("(prefers-color-scheme:light)").matches){document.documentElement.dataset.theme="light"}}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

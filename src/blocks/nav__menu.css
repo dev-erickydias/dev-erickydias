@@ -107,6 +107,79 @@
 }
 @media (min-width: 768px) { .nav__cta { display: block; } }
 
+/* Nav icon buttons (theme toggle, language) */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav__icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  transition: all var(--duration-fast);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nav__icon-btn:hover {
+  color: var(--accent);
+  border-color: var(--border-default);
+  background: var(--accent-subtle);
+}
+
+/* Language selector */
+.lang-selector {
+  position: relative;
+}
+.lang-selector__current {
+  font-size: 10px;
+}
+.lang-selector__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 60px;
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.15s var(--ease-out);
+  z-index: 200;
+}
+.lang-selector__option {
+  padding: 6px 12px;
+  border: none;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  text-align: center;
+}
+.lang-selector__option:hover {
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+.lang-selector__option--active {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
 /* Hamburger */
 .hamburger {
   display: flex;
@@ -151,7 +224,7 @@
   height: 100vh;
   height: 100dvh;
   z-index: 150;
-  background: #08080A;
+  background: var(--bg-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,6 +297,14 @@
 }
 .nav__mobile-link--active::after {
   width: calc(100% - 96px);
+}
+
+.nav__mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  animation: fadeInUp 0.4s var(--ease-expo) 0.28s both;
 }
 
 .nav__mobile-cta {

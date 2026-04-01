@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import handleDownload from "../utils/cvDownLoade";
+import ThemeToggle from "./ThemeToggle";
+import LanguageSelector from "./LanguageSelector";
 
 const tabs = [
   { label: "Home", href: "/" },
@@ -13,7 +15,7 @@ const tabs = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function NavMenu({ title }) {
+export default function NavMenu({ title, theme, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -46,9 +48,13 @@ export default function NavMenu({ title }) {
         ))}
       </div>
 
-      <button className="nav__cta" onClick={handleDownload} aria-label="Download CV as PDF">
-        Download CV
-      </button>
+      <div className="nav__actions">
+        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        <LanguageSelector />
+        <button className="nav__cta" onClick={handleDownload} aria-label="Download CV as PDF">
+          Download CV
+        </button>
+      </div>
 
       <button
         className={`hamburger ${menuOpen ? "open" : ""}`}
@@ -81,6 +87,12 @@ export default function NavMenu({ title }) {
               {tab.label}
             </Link>
           ))}
+
+          <div className="nav__mobile-actions" onClick={(e) => e.stopPropagation()}>
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+            <LanguageSelector />
+          </div>
+
           <button
             className="nav__mobile-cta"
             onClick={(e) => { e.stopPropagation(); handleDownload(); setMenuOpen(false); }}

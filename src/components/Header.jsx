@@ -1,13 +1,25 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import handleDownload from "../utils/cvDownLoade";
 
+const Scene3D = dynamic(() => import("./Scene3D"), {
+  ssr: false,
+  loading: () => (
+    <>
+      <div className="hero__blob hero__blob--1" />
+      <div className="hero__blob hero__blob--2" />
+      <div className="hero__blob hero__blob--3" />
+    </>
+  ),
+});
+
 export default function Header() {
   return (
     <section id="home" className="hero" aria-label="Introduction">
-      <div className="hero__blob hero__blob--1" aria-hidden="true" />
-      <div className="hero__blob hero__blob--2" aria-hidden="true" />
-      <div className="hero__blob hero__blob--3" aria-hidden="true" />
+      <Scene3D />
 
       <div className="hero__inner">
         <div className="hero__content">
