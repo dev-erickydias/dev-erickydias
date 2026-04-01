@@ -40,7 +40,7 @@ function MouseLight() {
     lightRef.current.position.y = (pointer.y * viewport.height) / 2;
   });
 
-  return <pointLight ref={lightRef} position={[0, 0, 6]} intensity={0.8} color="#818CF8" />;
+  return <pointLight ref={lightRef} position={[0, 0, 6]} intensity={0.8} color="#D4A853" />;
 }
 
 function Particles({ count = 80 }) {
@@ -70,7 +70,7 @@ function Particles({ count = 80 }) {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.03} color="#818CF8" transparent opacity={0.6} sizeAttenuation />
+      <pointsMaterial size={0.03} color="#D4A853" transparent opacity={0.6} sizeAttenuation />
     </points>
   );
 }
@@ -95,35 +95,35 @@ export default function Scene3D() {
       <FloatingShape
         position={[-3.5, 2, -2]}
         geometry={<icosahedronGeometry args={[1.2, 1]} />}
-        color="#818CF8"
+        color="#D4A853"
         speed={0.8}
         floatSpeed={1.2}
       />
       <FloatingShape
         position={[3.5, -1.5, -3]}
         geometry={<torusGeometry args={[1, 0.3, 8, 16]} />}
-        color="#22D3EE"
+        color="#3ECFB4"
         speed={1.2}
         floatSpeed={0.8}
       />
       <FloatingShape
         position={[0, 3, -4]}
         geometry={<octahedronGeometry args={[0.8, 0]} />}
-        color="#A78BFA"
+        color="#E8895C"
         speed={0.6}
         floatSpeed={1.5}
       />
       <FloatingShape
         position={[-2, -2.5, -2]}
         geometry={<dodecahedronGeometry args={[0.7, 0]} />}
-        color="#22D3EE"
+        color="#3ECFB4"
         speed={1}
         floatSpeed={1}
       />
       <FloatingShape
         position={[4, 2.5, -5]}
         geometry={<tetrahedronGeometry args={[0.9, 0]} />}
-        color="#818CF8"
+        color="#D4A853"
         speed={0.7}
         floatSpeed={1.3}
       />
