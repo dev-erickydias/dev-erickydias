@@ -1,0 +1,201 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "experience": "Experiencia",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "downloadCv": "Baixar CV",
+    "openMenu": "Abrir menu de navegacao",
+    "closeMenu": "Fechar menu de navegacao",
+    "logoAria": "Ericky Dias — Inicio"
+  },
+  "theme": {
+    "toLight": "Mudar para modo claro",
+    "toDark": "Mudar para modo escuro",
+    "light": "Modo claro",
+    "dark": "Modo escuro"
+  },
+  "lang": {
+    "change": "Mudar idioma",
+    "select": "Selecionar idioma",
+    "title": "Idioma"
+  },
+  "hero": {
+    "badge": "Disponivel para novos projetos",
+    "greeting": "Ola, eu sou",
+    "name": "Ericky",
+    "role": "Desenvolvedor Full Stack",
+    "sub": "Crio experiencias web modernas que sao rapidas, acessiveis e visualmente envolventes. Vamos construir algo incrivel juntos.",
+    "viewProjects": "Ver Projetos",
+    "downloadCv": "Baixar CV",
+    "photoAlt": "Ericky Dias — Desenvolvedor Full Stack"
+  },
+  "homeCards": {
+    "aboutTitle": "Sobre Mim",
+    "aboutDesc": "Desenvolvedor trilingue do Brasil, morando na Holanda. 2+ anos construindo apps web modernos.",
+    "expTitle": "Experiencia",
+    "expDesc": "Co-fundador da Fronnexus & ConnectEco. Co-proprietario do Heavens Hair em Amsterdam.",
+    "projTitle": "Projetos",
+    "projDesc": "9+ projetos feitos com React, Next.js, TypeScript, Supabase e mais.",
+    "contactTitle": "Contato",
+    "contactDesc": "Tem um projeto em mente? Vamos conectar e construir algo incrivel juntos."
+  },
+  "homePreview": {
+    "aboutLabel": "Sobre",
+    "aboutTitle": "Um pouco sobre",
+    "aboutTitleAccent": "mim",
+    "aboutText": "Sou Ericky Dias, um Desenvolvedor Full Stack trilingue (Portugues, Ingles, Espanhol) com 2+ anos de experiencia construindo aplicacoes web modernas. Com uma trajetoria internacional pelo Brasil, Portugal e Holanda, trago forte adaptabilidade cultural a cada projeto.",
+    "years": "Anos",
+    "projects": "Projetos",
+    "languages": "Idiomas",
+    "countries": "Paises",
+    "readMore": "Leia mais sobre mim",
+    "skillsLabel": "Habilidades",
+    "skillsTitle": "Minha",
+    "skillsTitleAccent": "stack de tecnologias",
+    "viewSkills": "Ver todas as habilidades",
+    "expLabel": "Experiencia",
+    "expTitle": "Onde eu",
+    "expTitleAccent": "trabalhei",
+    "seeExp": "Ver experiencia completa",
+    "workLabel": "Trabalho",
+    "workTitle": "Projetos",
+    "workTitleAccent": "Destaque",
+    "viewAll": "Ver todos os projetos"
+  },
+  "about": {
+    "label": "Sobre",
+    "heading": "Criando",
+    "headingAccent": "experiencias digitais",
+    "headingSuffix": "com paixao e precisao",
+    "p1": "Sou Ericky Dias, um Desenvolvedor Full Stack trilingue (Portugues, Ingles, Espanhol) com 2+ anos de experiencia construindo aplicacoes web modernas. Com uma trajetoria internacional pelo Brasil, Portugal e Holanda, trago forte adaptabilidade cultural e habilidades de comunicacao a cada projeto.",
+    "p2_prefix": "Como co-fundador da",
+    "p2_sons": "SonsOfNode",
+    "p2_mid1": ", lidero uma iniciativa focada em educacao de IA para desenvolvedores. Tambem co-fundei a",
+    "p2_eco": "ConnectEco",
+    "p2_mid2": ", uma plataforma de tecnologia sustentavel, e sou co-proprietario do",
+    "p2_heavens": "Heavens Hair",
+    "p2_suffix": "salao em Amsterdam — onde aprimoro minhas soft skills diariamente atraves de disciplina, criatividade e trabalho em equipe.",
+    "p3": "Adoro transformar ideias em produtos bonitos e funcionais que causam impacto. Minha formacao inclui bootcamps na TripleTen e Udemy, alem de cursos na Origamid e Alura.",
+    "yearsExp": "Anos Exp",
+    "projects": "Projetos",
+    "languages": "Idiomas",
+    "countries": "Paises",
+    "downloadCv": "Baixar CV"
+  },
+  "skills": {
+    "label": "Habilidades",
+    "title": "Minha",
+    "titleAccent": "stack de tecnologias",
+    "subtitle": "Tecnologias e ferramentas que uso para dar vida as ideias.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Ferramentas & DevOps"
+  },
+  "experience": {
+    "label": "Experiencia",
+    "title": "Onde eu",
+    "titleAccent": "trabalhei",
+    "eduHeading": "Educacao & Certificacoes",
+    "langsHeading": "Idiomas",
+    "roles": {
+      "cofounder": "Co-fundador",
+      "coowner": "Co-proprietario",
+      "waiter": "Garcom",
+      "support": "Agente de Suporte"
+    },
+    "descriptions": {
+      "sons": "Liderando uma iniciativa focada em educacao de IA para desenvolvedores. Construindo conteudo educacional e projetos comunitarios sobre inteligencia artificial e tecnologias web modernas.",
+      "eco": "Co-fundei uma organizacao de tecnologia focada em solucoes sustentaveis e conectividade ecologica. Desenvolvi plataforma web e projetos colaborativos usando React, Node.js e Python. Gerenciei uma equipe de desenvolvedores e liderei o planejamento estrategico de produto.",
+      "heavens": "Co-proprietario e operador de um salao de cabeleireiro onde aprimoro soft skills diariamente — disciplina, criatividade, resiliencia e trabalho em equipe. Gerencio operacoes do negocio, relacoes com clientes e presenca digital.",
+      "restaurant": "Prestei atendimento ao cliente em ambiente multicultural, comunicando em Portugues, Ingles e Espanhol com clientes internacionais. Desenvolvi fortes habilidades interpessoais e resolucao de problemas sob pressao.",
+      "oi": "Prestei suporte ao cliente em uma das maiores empresas de telecomunicacoes do Brasil. Resolvi questoes tecnicas e comerciais por telefone e chat. Consistentemente atingi metas de satisfacao."
+    },
+    "education": {
+      "tripleten": "Bootcamp Desenvolvimento Web Full-Stack",
+      "tripletenDetail": "React, Node.js, Metodologias Ageis",
+      "udemy": "Bootcamp Completo de Desenvolvimento Web",
+      "udemyInst": "Udemy — Dr. Angela Yu",
+      "udemyDetail": "HTML, CSS, JavaScript, Node.js, React, MongoDB",
+      "origamid": "Desenvolvimento Front-End",
+      "origamidDetail": "HTML, CSS, JavaScript, React, UI/UX Design",
+      "alura": "Cursos de Tecnologia",
+      "aluraDetail": "Programacao & Desenvolvimento Web"
+    },
+    "langs": {
+      "portuguese": "Portugues",
+      "english": "Ingles",
+      "spanish": "Espanhol",
+      "native": "Nativo",
+      "conversational": "Conversacional"
+    }
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Vamos",
+    "titleAccent": "trabalhar juntos",
+    "desc": "Tem um projeto em mente ou quer conversar? Preencha o formulario e retornarei o mais breve possivel.",
+    "email": "Email",
+    "location": "Localizacao",
+    "locationValue": "Holanda",
+    "linkedin": "LinkedIn",
+    "firstName": "Nome",
+    "firstNamePh": "Seu nome",
+    "lastName": "Sobrenome",
+    "lastNamePh": "Seu sobrenome",
+    "emailLabel": "Email",
+    "emailPh": "seu@email.com",
+    "subject": "Assunto",
+    "subjectPh": "Sobre o que se trata?",
+    "message": "Mensagem",
+    "messagePh": "Conte-me sobre seu projeto ou ideia...",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Algo deu errado. Tente novamente!"
+  },
+  "contactExtra": {
+    "availability": "Disponibilidade",
+    "availabilityDesc": "Aberto para trabalho integral, meio periodo ou freelance. Horarios flexiveis e disponivel para posicoes remotas ou hibridas.",
+    "responseTime": "Tempo de Resposta",
+    "responseTimeDesc": "Normalmente respondo em ate 24 horas. Para assuntos urgentes, me contate diretamente no LinkedIn.",
+    "whatIWorkOn": "No Que Trabalho",
+    "whatIWorkOnDesc": "Aplicacoes web, landing pages, e-commerce, plataformas SaaS, desenvolvimento de APIs e consultoria tecnica.",
+    "iSpeak": "Idiomas",
+    "iSpeakDesc": "Portugues (nativo), Ingles (conversacional) e Espanhol (conversacional). Confortavel em ambientes multiculturais.",
+    "findMe": "Me encontre em"
+  },
+  "projects": {
+    "label": "Trabalho",
+    "title": "Projetos Destaque",
+    "error": "Falha ao carregar projetos. Tente novamente mais tarde.",
+    "featured": "Destaque",
+    "liveSite": "Site Ao Vivo",
+    "repository": "Repositorio",
+    "closeModal": "Fechar detalhes do projeto",
+    "viewDetails": "Ver detalhes de"
+  },
+  "footer": {
+    "tagline": "Desenvolvedor Full Stack",
+    "copy": "Ericky Dias. Todos os direitos reservados."
+  },
+  "pages": {
+    "aboutLabel": "Sobre",
+    "aboutTitle": "Conheca",
+    "aboutTitleAccent": "eu",
+    "aboutSub": "Desenvolvedor, empreendedor e eterno aprendiz.",
+    "expLabel": "Experiencia",
+    "expTitle": "Onde eu",
+    "expTitleAccent": "trabalhei",
+    "expSub": "Minha jornada profissional por tres paises.",
+    "projLabel": "Trabalho",
+    "projTitle": "Projetos",
+    "projTitleAccent": "Destaque",
+    "projSub": "Aplicacoes do mundo real construidas com tecnologias modernas e enviadas para producao.",
+    "contactLabel": "Contato",
+    "contactTitle": "Vamos",
+    "contactTitleAccent": "conectar",
+    "contactSub": "Estou sempre aberto a novas oportunidades e projetos interessantes."
+  }
+}

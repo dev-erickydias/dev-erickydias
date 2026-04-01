@@ -1,0 +1,201 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCv": "Download CV",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "logoAria": "Ericky Dias — Home"
+  },
+  "theme": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "lang": {
+    "change": "Change language",
+    "select": "Select language",
+    "title": "Language"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "greeting": "Hi, I'm",
+    "name": "Ericky",
+    "role": "Full Stack Developer",
+    "sub": "I craft modern web experiences that are fast, accessible, and visually compelling. Let's build something great together.",
+    "viewProjects": "View Projects",
+    "downloadCv": "Download CV",
+    "photoAlt": "Ericky Dias — Full Stack Developer"
+  },
+  "homeCards": {
+    "aboutTitle": "About Me",
+    "aboutDesc": "Trilingual developer from Brazil, living in the Netherlands. 2+ years building modern web apps.",
+    "expTitle": "Experience",
+    "expDesc": "Co-founder of Fronnexus & ConnectEco. Co-owner of Heavens Hair in Amsterdam.",
+    "projTitle": "Projects",
+    "projDesc": "9+ projects built with React, Next.js, TypeScript, Supabase, and more.",
+    "contactTitle": "Contact",
+    "contactDesc": "Have a project in mind? Let's connect and build something amazing together."
+  },
+  "homePreview": {
+    "aboutLabel": "About",
+    "aboutTitle": "A little about",
+    "aboutTitleAccent": "me",
+    "aboutText": "I'm Ericky Dias, a trilingual Full Stack Developer (Portuguese, English, Spanish) with 2+ years of experience building modern web applications. With an international background spanning Brazil, Portugal, and the Netherlands, I bring strong cultural adaptability to every project.",
+    "years": "Years",
+    "projects": "Projects",
+    "languages": "Languages",
+    "countries": "Countries",
+    "readMore": "Read more about me",
+    "skillsLabel": "Skills",
+    "skillsTitle": "My",
+    "skillsTitleAccent": "tech stack",
+    "viewSkills": "View full skill set",
+    "expLabel": "Experience",
+    "expTitle": "Where I've",
+    "expTitleAccent": "worked",
+    "seeExp": "See full experience",
+    "workLabel": "Work",
+    "workTitle": "Featured",
+    "workTitleAccent": "Projects",
+    "viewAll": "View all projects"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Crafting",
+    "headingAccent": "digital experiences",
+    "headingSuffix": "with passion and precision",
+    "p1": "I'm Ericky Dias, a trilingual Full Stack Developer (Portuguese, English, Spanish) with 2+ years of experience building modern web applications. With an international background spanning Brazil, Portugal, and the Netherlands, I bring strong cultural adaptability and communication skills to every project.",
+    "p2_prefix": "As co-founder of",
+    "p2_sons": "SonsOfNode",
+    "p2_mid1": ", I lead an initiative focused on AI education for developers. I also co-founded",
+    "p2_eco": "ConnectEco",
+    "p2_mid2": ", a sustainable tech platform, and co-own",
+    "p2_heavens": "Heavens Hair",
+    "p2_suffix": "salon in Amsterdam — where I sharpen my soft skills daily through discipline, creativity, and teamwork.",
+    "p3": "I love transforming ideas into beautiful, functional products that make an impact. My training includes bootcamps at TripleTen and Udemy, along with courses at Origamid and Alura.",
+    "yearsExp": "Years Exp",
+    "projects": "Projects",
+    "languages": "Languages",
+    "countries": "Countries",
+    "downloadCv": "Download CV"
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "My",
+    "titleAccent": "tech stack",
+    "subtitle": "Technologies and tools I use to bring ideas to life.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & DevOps"
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Where I've",
+    "titleAccent": "worked",
+    "eduHeading": "Education & Certifications",
+    "langsHeading": "Languages",
+    "roles": {
+      "cofounder": "Co-founder",
+      "coowner": "Co-owner",
+      "waiter": "Waiter",
+      "support": "Customer Support Agent"
+    },
+    "descriptions": {
+      "sons": "Leading an initiative focused on AI education for developers. Building educational content and community-driven projects around artificial intelligence and modern web technologies.",
+      "eco": "Co-founded a technology organization focused on sustainable tech solutions and ecological connectivity. Developed web platform and collaborative projects using React, Node.js, and Python. Managed a team of developers and led strategic product planning.",
+      "heavens": "Co-own and operate a hair salon where I sharpen soft skills daily — discipline, creativity, resilience, and teamwork. Handle business operations, client relations, and digital presence.",
+      "restaurant": "Provided customer service in a multicultural environment, communicating in Portuguese, English, and Spanish with international clients. Developed strong interpersonal skills and problem-solving under pressure.",
+      "oi": "Provided customer support at one of Brazil's largest telecommunications companies. Resolved technical and commercial issues via phone and chat. Consistently met satisfaction targets."
+    },
+    "education": {
+      "tripleten": "Full-Stack Web Development Bootcamp",
+      "tripletenDetail": "React, Node.js, Agile Methodologies",
+      "udemy": "Complete Web Development Bootcamp",
+      "udemyInst": "Udemy — Dr. Angela Yu",
+      "udemyDetail": "HTML, CSS, JavaScript, Node.js, React, MongoDB",
+      "origamid": "Front-End Development",
+      "origamidDetail": "HTML, CSS, JavaScript, React, UI/UX Design",
+      "alura": "Technology Courses",
+      "aluraDetail": "Programming & Web Development"
+    },
+    "langs": {
+      "portuguese": "Portuguese",
+      "english": "English",
+      "spanish": "Spanish",
+      "native": "Native",
+      "conversational": "Conversational"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's",
+    "titleAccent": "work together",
+    "desc": "Have a project in mind or want to chat? Fill out the form and I'll get back to you as soon as possible.",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Netherlands",
+    "linkedin": "LinkedIn",
+    "firstName": "First Name",
+    "firstNamePh": "First name",
+    "lastName": "Last Name",
+    "lastNamePh": "Last name",
+    "emailLabel": "Email",
+    "emailPh": "your@email.com",
+    "subject": "Subject",
+    "subjectPh": "What is this about?",
+    "message": "Message",
+    "messagePh": "Tell me about your project or idea...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Try again!"
+  },
+  "contactExtra": {
+    "availability": "Availability",
+    "availabilityDesc": "Open to full-time, part-time, or freelance work. Flexible hours and available for remote or hybrid positions.",
+    "responseTime": "Response Time",
+    "responseTimeDesc": "I typically respond within 24 hours. For urgent matters, reach me directly on LinkedIn.",
+    "whatIWorkOn": "What I Work On",
+    "whatIWorkOnDesc": "Web applications, landing pages, e-commerce, SaaS platforms, API development, and technical consulting.",
+    "iSpeak": "I Speak",
+    "iSpeakDesc": "Portuguese (native), English (conversational), and Spanish (conversational). Comfortable in multicultural environments.",
+    "findMe": "Find me on"
+  },
+  "projects": {
+    "label": "Work",
+    "title": "Featured Projects",
+    "error": "Failed to load projects. Please try again later.",
+    "featured": "Featured",
+    "liveSite": "Live Site",
+    "repository": "Repository",
+    "closeModal": "Close project details",
+    "viewDetails": "View details for"
+  },
+  "footer": {
+    "tagline": "Full Stack Developer",
+    "copy": "Ericky Dias. All rights reserved."
+  },
+  "pages": {
+    "aboutLabel": "About",
+    "aboutTitle": "Get to know",
+    "aboutTitleAccent": "me",
+    "aboutSub": "Developer, entrepreneur, and lifelong learner.",
+    "expLabel": "Experience",
+    "expTitle": "Where I've",
+    "expTitleAccent": "worked",
+    "expSub": "My professional journey across three countries.",
+    "projLabel": "Work",
+    "projTitle": "Featured",
+    "projTitleAccent": "Projects",
+    "projSub": "Real-world applications built with modern technologies and shipped to production.",
+    "contactLabel": "Contact",
+    "contactTitle": "Let's",
+    "contactTitleAccent": "connect",
+    "contactSub": "I'm always open to new opportunities and interesting projects."
+  }
+}

@@ -1,66 +1,47 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "../i18n/I18nContext";
 
 export default function ContactExtra() {
+  const { t } = useI18n();
+
   return (
-    <section className="contact-extra" aria-label="Additional contact information">
+    <section className="contact-extra" aria-label={t("contact.label")}>
       <div className="contact-extra__inner">
         <div className="contact-extra__grid">
           <div className="contact-extra__card reveal-scale">
             <div className="contact-extra__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
             </div>
-            <h3 className="contact-extra__title">Availability</h3>
-            <p className="contact-extra__text">
-              Open to full-time, part-time, or freelance work. Flexible hours and
-              available for remote or hybrid positions.
-            </p>
+            <h3 className="contact-extra__title">{t("contactExtra.availability")}</h3>
+            <p className="contact-extra__text">{t("contactExtra.availabilityDesc")}</p>
           </div>
-
           <div className="contact-extra__card reveal-scale">
             <div className="contact-extra__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             </div>
-            <h3 className="contact-extra__title">Response Time</h3>
-            <p className="contact-extra__text">
-              I typically respond within 24 hours. For urgent matters, reach me
-              directly on LinkedIn.
-            </p>
+            <h3 className="contact-extra__title">{t("contactExtra.responseTime")}</h3>
+            <p className="contact-extra__text">{t("contactExtra.responseTimeDesc")}</p>
           </div>
-
           <div className="contact-extra__card reveal-scale">
             <div className="contact-extra__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
-              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
             </div>
-            <h3 className="contact-extra__title">What I Work On</h3>
-            <p className="contact-extra__text">
-              Web applications, landing pages, e-commerce, SaaS platforms,
-              API development, and technical consulting.
-            </p>
+            <h3 className="contact-extra__title">{t("contactExtra.whatIWorkOn")}</h3>
+            <p className="contact-extra__text">{t("contactExtra.whatIWorkOnDesc")}</p>
           </div>
-
           <div className="contact-extra__card reveal-scale">
             <div className="contact-extra__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
             </div>
-            <h3 className="contact-extra__title">I Speak</h3>
-            <p className="contact-extra__text">
-              Portuguese (native), English (conversational), and Spanish
-              (conversational). Comfortable in multicultural environments.
-            </p>
+            <h3 className="contact-extra__title">{t("contactExtra.iSpeak")}</h3>
+            <p className="contact-extra__text">{t("contactExtra.iSpeakDesc")}</p>
           </div>
         </div>
 
         <nav className="contact-extra__socials reveal" aria-label="Social media links">
-          <h3 className="contact-extra__socials-title">Find me on</h3>
+          <h3 className="contact-extra__socials-title">{t("contactExtra.findMe")}</h3>
           <div className="contact-extra__socials-grid">
             <a href="https://www.linkedin.com/in/erickydias/" target="_blank" rel="noopener noreferrer" className="contact-extra__social">
               <Image src="/image/linkedin.svg" alt="" width={20} height={20} aria-hidden="true" />

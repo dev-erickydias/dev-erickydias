@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Globe } from "lucide-react";
+import { useI18n } from "../i18n/I18nContext";
 
 const LANGUAGES = [
   { code: "en", label: "EN" },
@@ -11,13 +12,8 @@ const LANGUAGES = [
 
 export default function LanguageSelector() {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState("en");
+  const { lang, changeLang, t } = useI18n();
   const ref = useRef(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("lang");
-    if (stored) setLang(stored);
-  }, []);
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -28,8 +24,7 @@ export default function LanguageSelector() {
   }, []);
 
   const select = (code) => {
-    setLang(code);
-    localStorage.setItem("lang", code);
+    changeLang(code);
     setOpen(false);
   };
 
@@ -38,16 +33,16 @@ export default function LanguageSelector() {
       <button
         className="nav__icon-btn"
         onClick={() => setOpen(!open)}
-        aria-label="Change language"
+        aria-label={t("lang.change")}
         aria-expanded={open}
-        title="Language"
+        title={t("lang.title")}
       >
         <Globe size={18} />
         <span className="lang-selector__current">{lang.toUpperCase()}</span>
       </button>
 
       {open && (
-        <div className="lang-selector__dropdown" role="listbox" aria-label="Select language">
+        <div className="lang-selector__dropdown" role="listbox" aria-label={t("lang.select")}>
           {LANGUAGES.map((l) => (
             <button
               key={l.code}

@@ -1,31 +1,20 @@
-import Projects from "../../components/Projects";
+"use client";
 
-export const metadata = {
-  title: "Projects",
-  description:
-    "Featured projects by Ericky Dias: real-world web applications built with React, Next.js, TypeScript, Supabase, and modern technologies. Shipped to production.",
-  openGraph: {
-    title: "Projects — Ericky Dias",
-    description:
-      "Real-world applications built with modern technologies and shipped to production.",
-  },
-  alternates: {
-    canonical: "/projects",
-  },
-};
+import Projects from "../../components/Projects";
+import { useI18n } from "../../i18n/I18nContext";
 
 export default function ProjectsPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <div className="page-header">
         <div className="page-header__inner">
-          <div className="section__label reveal">Work</div>
+          <div className="section__label reveal">{t("pages.projLabel")}</div>
           <h1 className="page-header__title reveal">
-            Featured <span className="gradient-text">Projects</span>
+            {t("pages.projTitle")} <span className="gradient-text">{t("pages.projTitleAccent")}</span>
           </h1>
-          <p className="page-header__sub reveal">
-            Real-world applications built with modern technologies and shipped to production.
-          </p>
+          <p className="page-header__sub reveal">{t("pages.projSub")}</p>
         </div>
       </div>
       <Projects />

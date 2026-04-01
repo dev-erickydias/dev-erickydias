@@ -6,18 +6,20 @@ import { usePathname } from "next/navigation";
 import handleDownload from "../utils/cvDownLoade";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
-
-const tabs = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-];
+import { useI18n } from "../i18n/I18nContext";
 
 export default function NavMenu({ title, theme, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useI18n();
+
+  const tabs = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.experience"), href: "/experience" },
+    { label: t("nav.projects"), href: "/projects" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -31,14 +33,14 @@ export default function NavMenu({ title, theme, toggleTheme }) {
 
   return (
     <nav className="nav" aria-label="Main navigation">
-      <Link href="/" className="nav__logo" aria-label="Ericky Dias — Home">
+      <Link href="/" className="nav__logo" aria-label={t("nav.logoAria")}>
         {title.split(" ")[0]}<span>.</span>
       </Link>
 
       <div className="nav__tabs" role="list">
         {tabs.map((tab) => (
           <Link
-            key={tab.label}
+            key={tab.href}
             href={tab.href}
             className={`nav__tab ${isActive(tab.href) ? "nav__tab--active" : ""}`}
             aria-current={isActive(tab.href) ? "page" : undefined}
@@ -51,8 +53,8 @@ export default function NavMenu({ title, theme, toggleTheme }) {
       <div className="nav__actions">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         <LanguageSelector />
-        <button className="nav__cta" onClick={handleDownload} aria-label="Download CV as PDF">
-          Download CV
+        <button className="nav__cta" onClick={handleDownload} aria-label={t("nav.downloadCv")}>
+          {t("nav.downloadCv")}
         </button>
       </div>
 
@@ -61,7 +63,7 @@ export default function NavMenu({ title, theme, toggleTheme }) {
         onClick={() => setMenuOpen(!menuOpen)}
         aria-expanded={menuOpen}
         aria-controls="mobile-menu"
-        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
       >
         <span className="hamburger__line" aria-hidden="true" />
         <span className="hamburger__line" aria-hidden="true" />
@@ -78,7 +80,7 @@ export default function NavMenu({ title, theme, toggleTheme }) {
         >
           {tabs.map((tab) => (
             <Link
-              key={tab.label}
+              key={tab.href}
               href={tab.href}
               className={`nav__mobile-link ${isActive(tab.href) ? "nav__mobile-link--active" : ""}`}
               aria-current={isActive(tab.href) ? "page" : undefined}
@@ -97,7 +99,7 @@ export default function NavMenu({ title, theme, toggleTheme }) {
             className="nav__mobile-cta"
             onClick={(e) => { e.stopPropagation(); handleDownload(); setMenuOpen(false); }}
           >
-            Download CV
+            {t("nav.downloadCv")}
           </button>
         </div>
       )}
