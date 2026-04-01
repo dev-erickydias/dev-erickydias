@@ -1,6 +1,18 @@
-"use client";
-
 import Projects from "../../components/Projects";
+
+export const metadata = {
+  title: "Projects",
+  description:
+    "Featured projects by Ericky Dias: real-world web applications built with React, Next.js, TypeScript, Supabase, and modern technologies. Shipped to production.",
+  openGraph: {
+    title: "Projects — Ericky Dias",
+    description:
+      "Real-world applications built with modern technologies and shipped to production.",
+  },
+  alternates: {
+    canonical: "/projects",
+  },
+};
 
 export default function ProjectsPage() {
   return (

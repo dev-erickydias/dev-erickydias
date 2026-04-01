@@ -1,7 +1,19 @@
-"use client";
-
 import About from "../../components/About";
 import Skills from "../../components/Skills";
+
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about Ericky Dias: trilingual Full Stack Developer with 2+ years of experience in React, Next.js, and modern web technologies. Based in the Netherlands.",
+  openGraph: {
+    title: "About Ericky Dias",
+    description:
+      "Trilingual Full Stack Developer from Brazil, living in the Netherlands. 2+ years building modern web apps.",
+  },
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

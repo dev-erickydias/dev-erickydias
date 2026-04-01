@@ -1,6 +1,18 @@
-"use client";
-
 import Experience from "../../components/Experience";
+
+export const metadata = {
+  title: "Experience",
+  description:
+    "Professional experience of Ericky Dias: Co-founder of SonsOfNode & ConnectEco, Co-owner of Heavens Hair. International career across Brazil, Portugal, and the Netherlands.",
+  openGraph: {
+    title: "Experience — Ericky Dias",
+    description:
+      "My professional journey across three countries. Co-founder, developer, and entrepreneur.",
+  },
+  alternates: {
+    canonical: "/experience",
+  },
+};
 
 export default function ExperiencePage() {
   return (
