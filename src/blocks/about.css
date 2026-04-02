@@ -28,6 +28,8 @@
 
 .about__photo-wrap {
   position: relative;
+  transform-style: preserve-3d;
+  animation: card3dIdle 10s var(--ease-smooth) infinite;
 }
 .about__photo-wrap::before {
   content: '';
@@ -45,6 +47,10 @@
   bottom: -6px;
   right: -6px;
   opacity: 0.5;
+}
+.about__photo-wrap:hover {
+  animation-play-state: paused;
+  transform: perspective(800px) rotateY(5deg) rotateX(-3deg) translateZ(15px);
 }
 
 .about__photo {

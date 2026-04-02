@@ -1,6 +1,7 @@
 "use client";
 
 import Experience from "../../components/Experience";
+import FloatingShapes from "../../components/FloatingShapes";
 import { useI18n } from "../../i18n/I18nContext";
 
 export default function ExperiencePage() {
@@ -9,6 +10,7 @@ export default function ExperiencePage() {
   return (
     <>
       <div className="page-header">
+        <FloatingShapes />
         <div className="page-header__inner">
           <div className="section__label reveal">{t("pages.expLabel")}</div>
           <h1 className="page-header__title reveal">

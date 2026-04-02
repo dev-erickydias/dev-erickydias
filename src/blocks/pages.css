@@ -4,6 +4,7 @@
   padding-bottom: var(--space-xl);
   position: relative;
   overflow: hidden;
+  perspective: 1000px;
 }
 .page-header::before {
   content: '';
@@ -17,6 +18,7 @@
   filter: blur(160px);
   opacity: 0.06;
   pointer-events: none;
+  animation: glowPulse 6s var(--ease-smooth) infinite;
 }
 /* Decorative corner line */
 .page-header::after {
@@ -30,6 +32,7 @@
   border-top: 1px solid var(--border-subtle);
   pointer-events: none;
   opacity: 0.5;
+  animation: drift3d 10s var(--ease-smooth) infinite;
 }
 
 .page-header__inner {
@@ -37,6 +40,8 @@
   margin: 0 auto;
   padding: 0 var(--space-lg);
   text-align: center;
+  animation: pageHeader3dIn 1s var(--ease-expo) both;
+  transform-style: preserve-3d;
 }
 @media (min-width: 768px) {
   .page-header__inner { padding: 0 var(--space-xl); }
@@ -48,6 +53,7 @@
   letter-spacing: -1px;
   line-height: 1.1;
   margin-bottom: var(--space-md);
+  animation: pageHeader3dIn 1s var(--ease-expo) 0.1s both;
 }
 .page-header__sub {
   font-size: clamp(14px, 2vw, 17px);
@@ -55,6 +61,7 @@
   line-height: 1.7;
   max-width: 520px;
   margin: 0 auto;
+  animation: pageHeader3dIn 1s var(--ease-expo) 0.2s both;
 }
 
 /* ===== HOME CARDS (quick links) ===== */
@@ -91,6 +98,9 @@
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  animation: card3dIdle 8s var(--ease-smooth) infinite;
+  animation-delay: calc(var(--card-index, 0) * 0.5s);
 }
 /* Left accent bar */
 .home-card::before {
@@ -106,9 +116,10 @@
   opacity: 0.05;
 }
 .home-card:hover {
-  transform: translateY(-5px);
+  transform: perspective(800px) rotateX(-3deg) rotateY(3deg) translateY(-8px) translateZ(10px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-glow-lg);
+  animation-play-state: paused;
 }
 .home-card:hover::before { width: 100%; }
 
@@ -405,7 +416,7 @@
   transition: background var(--duration-normal);
 }
 .home-preview__project:hover {
-  transform: translateY(-5px);
+  transform: perspective(800px) rotateX(-2deg) rotateY(3deg) translateY(-8px) translateZ(15px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-glow-lg);
 }
@@ -488,7 +499,7 @@
   transition: width var(--duration-normal);
 }
 .contact-extra__card:hover {
-  transform: translateY(-4px);
+  transform: perspective(800px) rotateX(-3deg) rotateY(2deg) translateY(-6px) translateZ(10px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-glow);
 }

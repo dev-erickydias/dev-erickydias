@@ -56,6 +56,7 @@
   padding: var(--space-lg);
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
+  transform-style: preserve-3d;
 }
 .experience__card::before {
   content: '';
@@ -71,6 +72,7 @@
 .experience__card:hover {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-glow);
+  transform: perspective(800px) rotateX(-2deg) rotateY(2deg) translateY(-4px) translateZ(10px);
 }
 .experience__card:hover::before {
   opacity: 1;
@@ -195,6 +197,8 @@
 }
 .experience__edu-card:hover {
   border-color: var(--border-hover);
+  transform: perspective(800px) rotateX(-2deg) rotateY(3deg) translateY(-4px) translateZ(8px);
+  box-shadow: var(--shadow-glow);
 }
 .experience__edu-card:hover::after {
   width: 100%;

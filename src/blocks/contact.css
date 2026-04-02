@@ -76,6 +76,15 @@ a.contact__detail-value:hover { color: var(--accent); }
   border-radius: var(--radius-md);
   padding: var(--space-xl);
   position: relative;
+  transform-style: preserve-3d;
+  animation: card3dIdle 12s var(--ease-smooth) infinite;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.contact__form:hover {
+  animation-play-state: paused;
+  transform: perspective(800px) rotateX(-1deg) rotateY(2deg) translateZ(5px);
+  box-shadow: var(--shadow-glow-lg);
+  border-color: var(--border-hover);
 }
 .contact__form::before {
   content: '';

@@ -389,6 +389,106 @@ body::before {
 @keyframes lineGrow { from { width: 0; } to { width: 100%; } }
 @keyframes revealLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
+/* 3D Logo animations */
+@keyframes logo3dEntry {
+  0% { opacity: 0; transform: perspective(600px) rotateY(-90deg) rotateX(15deg) scale(0.5); filter: blur(8px); }
+  40% { opacity: 1; filter: blur(0); }
+  70% { transform: perspective(600px) rotateY(10deg) rotateX(-3deg) scale(1.05); }
+  100% { transform: perspective(600px) rotateY(0deg) rotateX(0deg) scale(1); }
+}
+@keyframes logoFloat3d {
+  0% { transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0); }
+  25% { transform: perspective(600px) rotateY(4deg) rotateX(-2deg) translateY(-2px); }
+  50% { transform: perspective(600px) rotateY(0deg) rotateX(2deg) translateY(0); }
+  75% { transform: perspective(600px) rotateY(-4deg) rotateX(-1deg) translateY(-1px); }
+  100% { transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0); }
+}
+@keyframes logoDotPulse {
+  0%, 100% { text-shadow: 0 0 8px var(--accent-glow); transform: scale(1); }
+  50% { text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent-glow); transform: scale(1.2); }
+}
+
+/* Page header 3D entrance */
+@keyframes pageHeader3dIn {
+  0% { opacity: 0; transform: perspective(1000px) rotateX(-8deg) translateY(60px) translateZ(-50px); }
+  60% { opacity: 1; transform: perspective(1000px) rotateX(2deg) translateY(-5px) translateZ(10px); }
+  100% { opacity: 1; transform: perspective(1000px) rotateX(0deg) translateY(0) translateZ(0); }
+}
+@keyframes floatSlow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
+@keyframes floatReverse { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(15px) rotate(-2deg); } }
+@keyframes orbit { 0% { transform: rotate(0deg) translateX(30px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); } }
+@keyframes drift3d {
+  0% { transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0); }
+  33% { transform: perspective(800px) rotateX(5deg) rotateY(8deg) translateZ(20px); }
+  66% { transform: perspective(800px) rotateX(-3deg) rotateY(-5deg) translateZ(10px); }
+  100% { transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.06; filter: blur(160px); }
+  50% { opacity: 0.12; filter: blur(140px); }
+}
+@keyframes card3dIdle {
+  0%, 100% { transform: perspective(800px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: perspective(800px) rotateX(1deg) rotateY(1.5deg); }
+  75% { transform: perspective(800px) rotateX(-1deg) rotateY(-1.5deg); }
+}
+
+/* Floating geometric decorations */
+.page-float-shape {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.07;
+  z-index: 0;
+}
+.page-float-shape--1 {
+  top: 15%;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid var(--accent);
+  transform: rotate(45deg);
+  animation: floatSlow 8s var(--ease-smooth) infinite, drift3d 12s var(--ease-smooth) infinite;
+}
+.page-float-shape--2 {
+  top: 30%;
+  right: 8%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--secondary);
+  animation: floatReverse 10s var(--ease-smooth) infinite, drift3d 15s var(--ease-smooth) infinite reverse;
+}
+.page-float-shape--3 {
+  bottom: 20%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid var(--accent);
+  opacity: 0.05;
+  animation: floatSlow 12s var(--ease-smooth) infinite 2s, orbit 20s linear infinite;
+}
+.page-float-shape--4 {
+  bottom: 35%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  animation: floatReverse 9s var(--ease-smooth) infinite, drift3d 18s var(--ease-smooth) infinite 3s;
+}
+.page-float-shape--5 {
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--secondary);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blob 11s var(--ease-smooth) infinite, floatSlow 14s var(--ease-smooth) infinite;
+  opacity: 0.04;
+}
+
 /* ===== SCROLL REVEAL ===== */
 .reveal {
   opacity: 0;

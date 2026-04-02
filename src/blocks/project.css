@@ -48,6 +48,7 @@
   position: relative;
   overflow: hidden;
   transition: all var(--duration-normal) var(--ease-out);
+  transform-style: preserve-3d;
 }
 
 /* Top accent line */
@@ -81,7 +82,7 @@
 .project__card:hover::after { left: 100%; }
 
 .project__card:hover {
-  transform: translateY(-6px);
+  transform: perspective(800px) rotateX(-3deg) rotateY(3deg) translateY(-8px) translateZ(15px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-lg), var(--shadow-glow-lg);
 }
@@ -263,6 +264,7 @@
   position: relative;
   animation: popIn 0.35s var(--ease-expo);
   box-shadow: var(--shadow-lg), var(--shadow-glow-lg);
+  transform-style: preserve-3d;
   max-height: 90vh;
   overflow-y: auto;
 }

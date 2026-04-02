@@ -2,6 +2,7 @@
 
 import About from "../../components/About";
 import Skills from "../../components/Skills";
+import FloatingShapes from "../../components/FloatingShapes";
 import { useI18n } from "../../i18n/I18nContext";
 
 export default function AboutPage() {
@@ -10,6 +11,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="page-header">
+        <FloatingShapes />
         <div className="page-header__inner">
           <div className="section__label reveal">{t("pages.aboutLabel")}</div>
           <h1 className="page-header__title reveal">

@@ -53,6 +53,7 @@
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 .skills__card::before {
   content: '';
@@ -66,7 +67,7 @@
 }
 .skills__card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-4px);
+  transform: perspective(800px) rotateX(-3deg) rotateY(3deg) translateY(-6px) translateZ(12px);
   box-shadow: var(--shadow-glow-lg);
 }
 .skills__card:hover::before {

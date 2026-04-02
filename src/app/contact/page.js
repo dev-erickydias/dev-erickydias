@@ -2,6 +2,7 @@
 
 import Contact from "../../components/Contact";
 import ContactExtra from "../../components/ContactExtra";
+import FloatingShapes from "../../components/FloatingShapes";
 import { useI18n } from "../../i18n/I18nContext";
 
 export default function ContactPage() {
@@ -10,6 +11,7 @@ export default function ContactPage() {
   return (
     <>
       <div className="page-header">
+        <FloatingShapes />
         <div className="page-header__inner">
           <div className="section__label reveal">{t("pages.contactLabel")}</div>
           <h1 className="page-header__title reveal">

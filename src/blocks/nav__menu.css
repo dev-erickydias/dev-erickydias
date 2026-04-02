@@ -23,7 +23,7 @@
 }
 @media (min-width: 768px) { .nav { padding: 0 var(--space-xl); } }
 
-/* Logo — serif accent */
+/* Logo — serif accent + 3D */
 .nav__logo {
   font-family: var(--font-display);
   font-size: 24px;
@@ -31,9 +31,20 @@
   letter-spacing: -0.5px;
   color: var(--text-primary);
   transition: color var(--duration-fast);
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: logo3dEntry 1.2s var(--ease-expo) both, logoFloat3d 6s var(--ease-smooth) 1.2s infinite;
+  will-change: transform;
 }
-.nav__logo span { color: var(--accent); }
-.nav__logo:hover { color: var(--accent); }
+.nav__logo span {
+  color: var(--accent);
+  display: inline-block;
+  animation: logoDotPulse 3s var(--ease-smooth) infinite;
+}
+.nav__logo:hover {
+  color: var(--accent);
+  animation: logo3dEntry 0.5s var(--ease-expo) both, logoFloat3d 3s var(--ease-smooth) 0.5s infinite;
+}
 
 /* Tab bar — desktop */
 .nav__tabs {
