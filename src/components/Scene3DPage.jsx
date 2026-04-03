@@ -20,8 +20,10 @@ function FloatingShape({ position, geometry, color, speed = 1, floatSpeed = 1 })
         {geometry}
         <meshStandardMaterial
           color={color}
+          emissive={color}
+          emissiveIntensity={0.5}
           transparent
-          opacity={0.08}
+          opacity={0.12}
           wireframe
           side={THREE.DoubleSide}
         />
@@ -70,7 +72,7 @@ function Particles({ count = 40 }) {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.02} color="#D4A853" transparent opacity={0.35} sizeAttenuation />
+      <pointsMaterial size={0.03} color="#D4A853" transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -122,7 +124,7 @@ export default function Scene3DPage({ variant = "about" }) {
       gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
     >
       <AdaptiveDpr pixelated />
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.4} />
       <MouseLight />
 
       {shapes.map((shape, i) => (
