@@ -17,14 +17,17 @@ function mapRepo(repo) {
   repo.topics?.forEach((t) => {
     if (!technologies.includes(t)) technologies.push(t);
   });
+  const isPortfolio = repo.name === 'dev-erickydias';
   return {
     id: repo.id,
+    rawName: repo.name,
     name: formatName(repo.name),
     description: repo.description || '',
     technologies,
     category: repo.language || 'Other',
-    isFeatured: repo.stats?.stars > 0,
-    deploy: repo.homepage || null,
+    isFeatured: repo.stats?.stars > 0 || isPortfolio,
+    isPortfolio,
+    deploy: isPortfolio ? null : (repo.homepage || null),
     repository: repo.url,
     stars: repo.stats?.stars || 0,
     forks: repo.stats?.forks || 0,
@@ -121,18 +124,24 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.id}
-              className={`project__card reveal ${project.isFeatured ? 'project__card--featured' : ''}`}
-              onClick={() => setSelectedProject(project)}
+              className={`project__card reveal ${project.isFeatured ? 'project__card--featured' : ''} ${project.isPortfolio ? 'project__card--portfolio' : ''}`}
+              onClick={() => !project.isPortfolio && setSelectedProject(project)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  setSelectedProject(project);
+                  if (!project.isPortfolio) setSelectedProject(project);
                 }
               }}
               tabIndex={0}
-              role="button"
-              aria-label={`${t('projects.viewDetails')} ${project.name}`}
+              role={project.isPortfolio ? 'article' : 'button'}
+              aria-label={project.isPortfolio ? project.name : `${t('projects.viewDetails')} ${project.name}`}
             >
+              {project.isPortfolio && (
+                <div className="project__card_portfolio-badge" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                  {t('projects.youAreHere') || 'You are here'}
+                </div>
+              )}
               <span className="project__card_number" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
@@ -143,20 +152,27 @@ export default function Projects() {
                   height="32"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="var(--accent)"
+                  stroke={project.isPortfolio ? 'var(--secondary)' : 'var(--accent)'}
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
                 >
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                  {project.isPortfolio
+                    ? <><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>
+                    : <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                  }
                 </svg>
               </div>
-              {project.isFeatured && (
+              {project.isPortfolio ? (
+                <span className="project__card_featured project__card_featured--portfolio">
+                  {t('projects.thisPortfolio') || 'This Portfolio'}
+                </span>
+              ) : project.isFeatured ? (
                 <span className="project__card_featured">
                   {t('projects.featured')}
                 </span>
-              )}
+              ) : null}
               <span className="project__card_category">{project.category}</span>
               <h3 className="project__card_title font-display">
                 {project.name}
@@ -164,6 +180,15 @@ export default function Projects() {
               <p className="project__card_text">
                 {project.description || t('projects.error')}
               </p>
+              {project.isPortfolio && (
+                <div className="project__card_portfolio-links">
+                  <a className="project__card_portfolio-link" href={project.repository} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                    {t('projects.sourceCode') || 'Source Code'}
+                  </a>
+                </div>
+              )}
+              {!project.isPortfolio && (
               <div className="project__card_techs">
                 {project.technologies.slice(0, 4).map((tech, i) => (
                   <span key={i} className="project__card_tech">
@@ -176,6 +201,7 @@ export default function Projects() {
                   </span>
                 )}
               </div>
+              )}
             </article>
           ))}
         </div>

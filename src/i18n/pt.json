@@ -177,7 +177,10 @@
     "viewDetails": "Ver detalhes de",
     "previewBlocked": "Preview indisponivel",
     "previewBlockedDesc": "Este site nao permite previews incorporados por questoes de seguranca.",
-    "openNewTab": "Abrir em nova aba"
+    "openNewTab": "Abrir em nova aba",
+    "youAreHere": "Voce esta aqui",
+    "thisPortfolio": "Este Portfolio",
+    "sourceCode": "Codigo Fonte"
   },
   "footer": {
     "tagline": "Desenvolvedor Full Stack",

@@ -177,7 +177,10 @@
     "viewDetails": "View details for",
     "previewBlocked": "Preview not available",
     "previewBlockedDesc": "This site doesn't allow embedded previews for security reasons.",
-    "openNewTab": "Open in new tab"
+    "openNewTab": "Open in new tab",
+    "youAreHere": "You are here",
+    "thisPortfolio": "This Portfolio",
+    "sourceCode": "Source Code"
   },
   "footer": {
     "tagline": "Full Stack Developer",
