@@ -184,6 +184,9 @@
   border-radius: var(--radius-md);
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
+  transform-style: preserve-3d;
+  animation: card3dIdle 10s var(--ease-smooth) infinite;
+  animation-delay: calc(var(--card-index, 0) * 1.5s);
 }
 .experience__edu-card::after {
   content: '';
@@ -256,7 +259,8 @@
 }
 .experience__lang:hover {
   border-color: var(--border-hover);
-  transform: translateY(-2px);
+  transform: perspective(600px) rotateX(-3deg) rotateY(4deg) translateY(-3px) translateZ(8px);
+  box-shadow: var(--shadow-glow);
 }
 .experience__lang-name {
   font-size: 14px;

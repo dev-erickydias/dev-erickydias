@@ -1,12 +1,14 @@
 const GITHUB_API = "https://api.github.com";
+const USERNAME_REGEX = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+const MAX_PAGES = 10;
 
 async function fetchAllRepos(username) {
   const repos = [];
   let page = 1;
 
-  while (true) {
+  while (page <= MAX_PAGES) {
     const res = await fetch(
-      `${GITHUB_API}/users/${username}/repos?per_page=100&page=${page}&type=public`,
+      `${GITHUB_API}/users/${encodeURIComponent(username)}/repos?per_page=100&page=${page}&type=public`,
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
@@ -20,7 +22,7 @@ async function fetchAllRepos(username) {
 
     if (!res.ok) {
       if (res.status === 404) {
-        throw { status: 404, message: `User "${username}" not found` };
+        throw { status: 404, message: "User not found" };
       }
       throw { status: res.status, message: `GitHub API error: ${res.status}` };
     }
@@ -122,10 +124,10 @@ export async function GET(request) {
 
     // Required: GitHub username
     const user = searchParams.get("user");
-    if (!user) {
+    if (!user || !USERNAME_REGEX.test(user)) {
       return Response.json(
         {
-          error: "Missing required parameter: user",
+          error: !user ? "Missing required parameter: user" : "Invalid GitHub username format",
           usage: "/api/github?user=USERNAME",
           params: {
             user: "(required) GitHub username",

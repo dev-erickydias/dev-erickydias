@@ -45,7 +45,7 @@ export default function ProjectModal({ project, onClose }) {
 
         {project.technologies?.length > 0 && (
           <div className="modal__techs">
-            {project.technologies.map((tech, index) => (<span key={index} className="modal__tech">{tech}</span>))}
+            {project.technologies.map((tech) => (<span key={tech} className="modal__tech">{tech}</span>))}
           </div>
         )}
 

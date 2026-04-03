@@ -54,6 +54,8 @@
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
+  animation: card3dIdle 9s var(--ease-smooth) infinite;
+  animation-delay: calc(var(--card-index, 0) * 1s);
 }
 .skills__card::before {
   content: '';

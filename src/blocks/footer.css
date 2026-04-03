@@ -119,7 +119,7 @@
 }
 .footer__social:hover img {
   opacity: 1;
-  filter: brightness(10);
+  filter: brightness(10) invert(0);
 }
 
 .footer__bottom {

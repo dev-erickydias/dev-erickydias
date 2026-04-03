@@ -63,7 +63,7 @@ export const metadata = {
       "Full Stack Developer crafting modern web experiences with React, Next.js, TypeScript, and Node.js.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/erickynew.jpg",
         width: 1200,
         height: 630,
         alt: "Ericky Dias — Full Stack Developer Portfolio",
@@ -75,7 +75,7 @@ export const metadata = {
     title: "Ericky Dias | Full Stack Developer",
     description:
       "Full Stack Developer crafting modern web experiences with React, Next.js, TypeScript, and Node.js.",
-    images: ["/og-image.png"],
+    images: ["/erickynew.jpg"],
   },
   robots: {
     index: true,
@@ -117,7 +117,7 @@ const jsonLd = {
     "https://www.instagram.com/ericky_dias/",
   ],
   worksFor: [
-    { "@type": "Organization", name: "Fronnexus" },
+    { "@type": "Organization", name: "SonsOfNode" },
     { "@type": "Organization", name: "ConnectEco" },
   ],
   knowsAbout: [

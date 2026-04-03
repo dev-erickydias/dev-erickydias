@@ -18,7 +18,7 @@ function formatName(name) {
 }
 
 const highlights = [
-  { role: "Co-founder", company: "Fronnexus", period: "2024 — Present" },
+  { role: "Co-founder", company: "SonsOfNode", period: "2024 — Present" },
   { role: "Co-founder", company: "ConnectEco", period: "2023 — Present" },
   { role: "Co-owner", company: "Heavens Hair", period: "2022 — Present" },
 ];

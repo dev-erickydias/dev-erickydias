@@ -67,8 +67,8 @@ export default function Skills() {
         <p className="skills__subtitle reveal">{t("skills.subtitle")}</p>
 
         <div className="skills__grid">
-          {skillCategories.map((cat) => (
-            <div key={cat.titleKey} className="skills__card reveal-scale">
+          {skillCategories.map((cat, i) => (
+            <div key={cat.titleKey} className="skills__card reveal-scale" style={{ "--card-index": i }}>
               <div className="skills__card-header">
                 <div className="skills__card-icon">{cat.icon}</div>
                 <h3 className="skills__card-title">{t(cat.titleKey)}</h3>

@@ -99,7 +99,7 @@ export default function Experience() {
           </h3>
           <div className="experience__edu-grid">
             {education.map((edu, i) => (
-              <div key={i} className="experience__edu-card">
+              <div key={i} className="experience__edu-card" style={{ "--card-index": i }}>
                 <div className="experience__edu-title">{edu.title}</div>
                 <div className="experience__edu-inst">{edu.institution}</div>
                 <div className="experience__edu-detail">{edu.detail}</div>

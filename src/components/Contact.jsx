@@ -1,30 +1,61 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { supabase } from "../utils/supabase";
 import { useI18n } from "../i18n/I18nContext";
+
+const MAX_LEN = { first_name: 50, last_name: 50, email: 100, subject: 150, message: 2000 };
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const COOLDOWN_MS = 30000;
 
 export default function Contact() {
   const { t } = useI18n();
   const [status, setStatus] = useState("idle");
+  const lastSubmit = useRef(0);
   const [formData, setFormData] = useState({
     first_name: "", last_name: "", email: "", subject: "", message: "",
   });
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    if (MAX_LEN[name] && value.length > MAX_LEN[name]) return;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (Date.now() - lastSubmit.current < COOLDOWN_MS) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
+    const trimmed = Object.fromEntries(
+      Object.entries(formData).map(([k, v]) => [k, v.trim()])
+    );
+
+    if (!trimmed.first_name || !trimmed.last_name || !trimmed.email || !trimmed.subject || !trimmed.message) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
+    if (!EMAIL_REGEX.test(trimmed.email)) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
     setStatus("sending");
     try {
       if (!supabase) throw new Error("Supabase not configured");
       const { error } = await supabase.from("contact_submissions").insert({
-        first_name: formData.first_name, last_name: formData.last_name,
-        email: formData.email, services: formData.subject, message: formData.message,
+        first_name: trimmed.first_name, last_name: trimmed.last_name,
+        email: trimmed.email, services: trimmed.subject, message: trimmed.message,
       });
       if (error) throw error;
+      lastSubmit.current = Date.now();
       setStatus("success");
       setFormData({ first_name: "", last_name: "", email: "", subject: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);

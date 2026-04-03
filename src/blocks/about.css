@@ -125,7 +125,7 @@
   transition: all var(--duration-fast) var(--ease-out);
 }
 .about__skill:hover {
-  transform: translateY(-2px);
+  transform: perspective(400px) rotateX(-3deg) rotateY(5deg) translateY(-2px) translateZ(8px);
   background: var(--accent);
   color: var(--text-inverse);
   box-shadow: var(--shadow-glow);
@@ -146,6 +146,11 @@
 .about__stat {
   text-align: center;
   padding: var(--space-md) 0;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+.about__stat:hover {
+  transform: perspective(600px) rotateX(-5deg) rotateY(5deg) translateZ(10px);
 }
 .about__stat-number {
   font-family: var(--font-display);
