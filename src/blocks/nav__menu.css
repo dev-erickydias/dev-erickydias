@@ -195,10 +195,23 @@
 .hamburger {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 6px;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
   z-index: 200;
+  background: none;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm, 8px);
+  width: 44px;
+  height: 44px;
+  transition: border-color var(--duration-normal) var(--ease-out),
+              background var(--duration-normal) var(--ease-out);
+}
+.hamburger:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 .hamburger__line {
   width: 24px;
