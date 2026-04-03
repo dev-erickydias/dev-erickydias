@@ -174,7 +174,10 @@
     "liveSite": "Live Site",
     "repository": "Repository",
     "closeModal": "Close project details",
-    "viewDetails": "View details for"
+    "viewDetails": "View details for",
+    "previewBlocked": "Preview not available",
+    "previewBlockedDesc": "This site doesn't allow embedded previews for security reasons.",
+    "openNewTab": "Open in new tab"
   },
   "footer": {
     "tagline": "Full Stack Developer",

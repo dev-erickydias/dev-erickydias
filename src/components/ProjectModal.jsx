@@ -130,26 +130,25 @@ export default function ProjectModal({ project, onClose }) {
     // Longer timeout — some sites take a while to load
     iframeTimerRef.current = setTimeout(() => {
       setIframeStatus((prev) => prev === "loading" ? "blocked" : prev);
-    }, 12000);
+    }, 20000);
   }, [isMaximized, windowRect]);
 
   const handleIframeLoad = useCallback(() => {
     if (iframeTimerRef.current) clearTimeout(iframeTimerRef.current);
-    // Check if iframe actually loaded content or was blocked
-    // When blocked by CSP, onLoad fires but we can't access contentWindow
+    // Cross-origin iframes always throw when accessing contentWindow.location
+    // That's expected and means the site loaded successfully
     try {
       const iframe = document.querySelector(".modal__iframe");
-      if (iframe) {
-        // Try to access iframe — if blocked, this throws
-        const iframeDoc = iframe.contentWindow?.location?.href;
-        // If we get "about:blank", it was blocked
-        if (iframeDoc === "about:blank") {
+      if (iframe?.contentWindow) {
+        const href = iframe.contentWindow.location.href;
+        // If we CAN read it and it's about:blank, it was blocked
+        if (href === "about:blank") {
           setIframeStatus("blocked");
           return;
         }
       }
     } catch {
-      // Cross-origin — this is actually GOOD, means it loaded
+      // Cross-origin error = iframe loaded a real page = success
     }
     setIframeStatus("loaded");
   }, []);
@@ -276,7 +275,7 @@ export default function ProjectModal({ project, onClose }) {
               title={`Preview of ${project.name}`}
               onLoad={handleIframeLoad}
               onError={handleIframeError}
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation"
             />
           </div>
         ) : (

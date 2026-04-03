@@ -174,7 +174,10 @@
     "liveSite": "Site Ao Vivo",
     "repository": "Repositorio",
     "closeModal": "Fechar detalhes do projeto",
-    "viewDetails": "Ver detalhes de"
+    "viewDetails": "Ver detalhes de",
+    "previewBlocked": "Preview indisponivel",
+    "previewBlockedDesc": "Este site nao permite previews incorporados por questoes de seguranca.",
+    "openNewTab": "Abrir em nova aba"
   },
   "footer": {
     "tagline": "Desenvolvedor Full Stack",
