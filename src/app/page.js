@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { useI18n } from "../i18n/I18nContext";
 
-const API_URL = "https://api-pearl-nine-29.vercel.app/api/github?user=dev-erickydias&sort=updated&order=desc&per_page=3";
+const API_URL = "https://api-pearl-nine-29.vercel.app/api/github?user=dev-erickydias&sort=updated&order=desc&per_page=100";
 
 const topSkills = [
   "React", "Next.js", "TypeScript", "JavaScript", "Node.js",
@@ -31,8 +31,13 @@ export default function Home() {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
+        const repos = data.projects || [];
+        // Show ONLY pinned repos (starred > 0), exclude this portfolio
+        const pinned = repos.filter(
+          (r) => r.stats?.stars > 0 && r.name !== "dev-erickydias"
+        );
         setFeatured(
-          (data.projects || []).map((repo) => ({
+          pinned.map((repo) => ({
             name: formatName(repo.name),
             description: repo.description || "",
             technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
