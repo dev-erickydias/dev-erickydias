@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { supabase } from "../utils/supabase";
 import { useI18n } from "../i18n/I18nContext";
 
 const MAX_LEN = { first_name: 50, last_name: 50, email: 100, subject: 150, message: 2000 };
@@ -49,12 +48,17 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      if (!supabase) throw new Error("Supabase not configured");
-      const { error } = await supabase.from("contact_submissions").insert({
-        first_name: trimmed.first_name, last_name: trimmed.last_name,
-        email: trimmed.email, services: trimmed.subject, message: trimmed.message,
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(trimmed),
       });
-      if (error) throw error;
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Failed");
+      }
+
       lastSubmit.current = Date.now();
       setStatus("success");
       setFormData({ first_name: "", last_name: "", email: "", subject: "", message: "" });
@@ -107,6 +111,9 @@ export default function Contact() {
         </div>
 
         <form className="contact__form reveal-right" onSubmit={handleSubmit}>
+          {/* Honeypot field — hidden from users, bots fill it */}
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, width: 0 }} />
+
           <div className="contact__row">
             <div className="contact__field">
               <label htmlFor="first_name" className="contact__label">{t("contact.firstName")}</label>

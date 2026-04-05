@@ -32,12 +32,14 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         const repos = data.projects || [];
-        // Show ONLY pinned repos (starred > 0), exclude this portfolio
+        // Show ONLY pinned repos, exclude this portfolio
         const pinned = repos.filter(
-          (r) => r.stats?.stars > 0 && r.name !== "dev-erickydias"
+          (r) => r.is_pinned && r.name !== "dev-erickydias"
         );
+        // Shuffle and pick up to 3 random pinned repos
+        const shuffled = pinned.sort(() => Math.random() - 0.5).slice(0, 3);
         setFeatured(
-          pinned.map((repo) => ({
+          shuffled.map((repo) => ({
             name: formatName(repo.name),
             description: repo.description || "",
             technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
