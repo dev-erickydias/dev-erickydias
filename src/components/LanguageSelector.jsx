@@ -33,11 +33,11 @@ export default function LanguageSelector() {
       <button
         className="nav__icon-btn"
         onClick={() => setOpen(!open)}
-        aria-label={t("lang.change")}
+        aria-label={`${lang.toUpperCase()} — ${t("lang.change")}`}
         aria-expanded={open}
         title={t("lang.title")}
       >
-        <Globe size={18} />
+        <Globe size={18} aria-hidden="true" />
         <span className="lang-selector__current">{lang.toUpperCase()}</span>
       </button>
 

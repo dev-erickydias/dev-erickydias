@@ -69,6 +69,7 @@ export default function Home() {
 
       <section className="home-cards">
         <div className="home-cards__inner">
+          <h2 className="sr-only">{t('homeCards.sectionTitle') || 'Explore'}</h2>
           <div className="home-cards__grid">
             {cards.map((item) => (
               <Link key={item.href} href={item.href} className="home-card reveal-scale">

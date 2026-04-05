@@ -133,7 +133,7 @@
 }
 .footer__copy {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-tertiary);
+  font-size: 12px;
+  color: var(--text-secondary);
   letter-spacing: 1px;
 }
