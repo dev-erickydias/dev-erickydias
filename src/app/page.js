@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -25,34 +25,39 @@ const highlights = [
 
 export default function Home() {
   const { t } = useI18n();
-  const [featured, setFeatured] = useState([]);
+  const [rawFeatured, setRawFeatured] = useState([]);
 
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         const repos = data.projects || [];
-        // Show ONLY pinned repos, exclude this portfolio
         const pinned = repos.filter(
           (r) => r.is_pinned && r.name !== "dev-erickydias"
         );
-        // Shuffle and pick up to 3 random pinned repos
         const shuffled = pinned.sort(() => Math.random() - 0.5).slice(0, 3);
-        setFeatured(
-          shuffled.map((repo) => {
-            const i18nKey = `repoDescriptions.${repo.name}`;
-            const localized = t(i18nKey);
-            return {
-              name: formatName(repo.name),
-              description: localized && localized !== i18nKey ? localized : (repo.description || ""),
-              technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
-              deploy: repo.homepage || repo.url,
-            };
-          })
+        setRawFeatured(
+          shuffled.map((repo) => ({
+            rawName: repo.name,
+            name: formatName(repo.name),
+            apiDescription: repo.description || "",
+            technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
+            deploy: repo.homepage || repo.url,
+          }))
         );
       })
       .catch(() => {});
   }, []);
+
+  // Re-translate when language changes
+  const featured = useMemo(
+    () => rawFeatured.map((p) => {
+      const key = `repoDescriptions.${p.rawName}`;
+      const localized = t(key);
+      return { ...p, description: localized && localized !== key ? localized : p.apiDescription };
+    }),
+    [rawFeatured, t]
+  );
 
   const cards = [
     {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import ProjectModal from './ProjectModal';
 import { useI18n } from '../i18n/I18nContext';
 
@@ -11,23 +11,18 @@ function formatName(name) {
   return name.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function mapRepo(repo, tFn) {
+function mapRepo(repo) {
   const technologies = [];
   if (repo.language) technologies.push(repo.language);
   repo.topics?.forEach((topic) => {
     if (!technologies.includes(topic)) technologies.push(topic);
   });
   const isPortfolio = repo.name === 'dev-erickydias';
-  const i18nKey = `repoDescriptions.${repo.name}`;
-  const localizedDesc = tFn ? tFn(i18nKey) : null;
-  const description = localizedDesc && localizedDesc !== i18nKey
-    ? localizedDesc
-    : (repo.description || '');
   return {
     id: repo.id,
     rawName: repo.name,
     name: formatName(repo.name),
-    description,
+    apiDescription: repo.description || '',
     technologies,
     category: repo.language || 'Other',
     isFeatured: repo.stats?.stars > 0 || isPortfolio,
@@ -41,9 +36,15 @@ function mapRepo(repo, tFn) {
   };
 }
 
+function getDescription(project, tFn) {
+  const key = `repoDescriptions.${project.rawName}`;
+  const localized = tFn(key);
+  return localized && localized !== key ? localized : project.apiDescription;
+}
+
 export default function Projects() {
   const { t } = useI18n();
-  const [projects, setProjects] = useState([]);
+  const [rawProjects, setRawProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -55,7 +56,7 @@ export default function Projects() {
         return res.json();
       })
       .then((data) => {
-        setProjects((data.projects || []).map((r) => mapRepo(r, t)));
+        setRawProjects((data.projects || []).map(mapRepo));
         setLoading(false);
       })
       .catch((err) => {
@@ -63,6 +64,12 @@ export default function Projects() {
         setLoading(false);
       });
   }, []);
+
+  // Re-translate descriptions when language changes
+  const projects = useMemo(
+    () => rawProjects.map((p) => ({ ...p, description: getDescription(p, t) })),
+    [rawProjects, t]
+  );
 
   if (loading) {
     return (
