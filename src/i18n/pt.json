@@ -203,5 +203,19 @@
     "contactTitle": "Vamos",
     "contactTitleAccent": "conectar",
     "contactSub": "Estou sempre aberto a novas oportunidades e projetos interessantes."
+  },
+  "repoDescriptions": {
+    "craftfood": "Site de restaurante japonês artesanal — cardápio completo, pratos populares, depoimentos e horários. Ideal para restaurantes que querem uma presença online elegante e responsiva com animações suaves e imagens de alta qualidade.",
+    "pokedex": "Pokédex interativa com interface holográfica estilo scanner — explore todos os Pokémon com cards visuais, busca e detalhes completos. Perfeita para fãs de Pokémon que querem consultar informações de forma rápida e divertida.",
+    "the-pulse-news": "Portal de notícias premium com design clássico estilo jornal — leia notícias por categorias, assine a newsletter e fique informado. Ideal para quem quer uma experiência de leitura elegante e organizada, com layout responsivo e assinatura via Supabase.",
+    "calculadora": "Calculadora de salários mínimos da UE — compare salários de todos os países europeus. Ideal para quem pensa em emigrar ou trabalhar na Europa. Suporta 23 idiomas, alterna hora/mês e tem ranking completo.",
+    "heavens": "Link-in-bio para o salão Heavens Hair — página de links para Instagram com agendamento, portfólio e contato. Perfeita para salões de beleza que querem centralizar seus links de redes sociais num só lugar com visual profissional.",
+    "horse-hotel-ams": "Sistema completo de gerenciamento de hotel para cavalos em Amsterdam — controla hospedagens, tarefas, transporte e reservas. Ideal para donos de estábulos que precisam organizar check-in/out, quarentena, agendamentos e equipe. Multilingue (EN/NL/PT) com controle de acesso por papéis.",
+    "fronnexus": "Fork do projeto Fronnexus — comunidade e plataforma colaborativa de desenvolvimento frontend. Contribuição para um projeto open source focado em conectar desenvolvedores e compartilhar conhecimento.",
+    "connecteco": "Plataforma ecológica Connect Eco — conecta pessoas e iniciativas sustentáveis para cuidar do meio ambiente. App mobile-friendly com React e Supabase que facilita ações ecológicas na comunidade local.",
+    "bikeCraft-Origamid": "Site de bicicletas artesanais com design orgânico — apresenta modelos exclusivos, formulário de contato e orçamento. Projeto do curso Origamid que demonstra fundamentos de HTML, CSS e JavaScript com foco em layout responsivo e estética visual.",
+    "github-api": "API pública e gratuita que permite buscar, filtrar e ordenar repositórios públicos de qualquer usuário do GitHub. Ideal para desenvolvedores que querem exibir seus projetos em portfólios pessoais, dashboards ou qualquer aplicação web sem precisar lidar diretamente com a API do GitHub. Oferece filtros por linguagem, tópico, busca por texto, 7 opções.",
+    "dev-erickydias": "Portfólio pessoal com tema Atelier Noir — multi-página com Hero, About, Skills, Experience, Projects e Contact. Integrado com EmailJS e Supabase para dados dinâmicos. Next.js 15, React 18, CSS Modules. Performance, SEO, acessibilidade e design responsivo.",
+    "claude-code-agents": "26 agentes especializados (skills) para Claude Code que trabalham em cadeia para criar projetos completos — da estratégia ao deploy."
   }
 }

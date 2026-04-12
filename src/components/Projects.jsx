@@ -11,18 +11,23 @@ function formatName(name) {
   return name.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function mapRepo(repo) {
+function mapRepo(repo, tFn) {
   const technologies = [];
   if (repo.language) technologies.push(repo.language);
-  repo.topics?.forEach((t) => {
-    if (!technologies.includes(t)) technologies.push(t);
+  repo.topics?.forEach((topic) => {
+    if (!technologies.includes(topic)) technologies.push(topic);
   });
   const isPortfolio = repo.name === 'dev-erickydias';
+  const i18nKey = `repoDescriptions.${repo.name}`;
+  const localizedDesc = tFn ? tFn(i18nKey) : null;
+  const description = localizedDesc && localizedDesc !== i18nKey
+    ? localizedDesc
+    : (repo.description || '');
   return {
     id: repo.id,
     rawName: repo.name,
     name: formatName(repo.name),
-    description: repo.description || '',
+    description,
     technologies,
     category: repo.language || 'Other',
     isFeatured: repo.stats?.stars > 0 || isPortfolio,
@@ -50,7 +55,7 @@ export default function Projects() {
         return res.json();
       })
       .then((data) => {
-        setProjects((data.projects || []).map(mapRepo));
+        setProjects((data.projects || []).map((r) => mapRepo(r, t)));
         setLoading(false);
       })
       .catch((err) => {

@@ -203,5 +203,19 @@
     "contactTitle": "Let's",
     "contactTitleAccent": "connect",
     "contactSub": "I'm always open to new opportunities and interesting projects."
+  },
+  "repoDescriptions": {
+    "craftfood": "Artisan Japanese restaurant website — full menu, popular dishes, testimonials, and hours. Ideal for restaurants wanting an elegant, responsive online presence with smooth animations and high-quality images.",
+    "pokedex": "Interactive Pokedex with holographic scanner-style interface — explore all Pokemon with visual cards, search, and complete details. Perfect for Pokemon fans looking to browse information quickly and fun.",
+    "the-pulse-news": "Premium news portal with classic newspaper-style design — read news by category, subscribe to the newsletter, and stay informed. Ideal for those seeking an elegant, organized reading experience with responsive layout and Supabase subscriptions.",
+    "calculadora": "EU minimum wage calculator — compare salaries across all European countries. Ideal for anyone considering emigrating or working in Europe. Supports 23 languages, toggles hourly/monthly, and has full rankings.",
+    "heavens": "Link-in-bio page for Heavens Hair salon — Instagram links page with booking, portfolio, and contact. Perfect for beauty salons wanting to centralize their social media links in one professional-looking page.",
+    "horse-hotel-ams": "Complete horse hotel management system in Amsterdam — manages stays, tasks, transport, and reservations. Ideal for stable owners needing to organize check-in/out, quarantine, scheduling, and staff. Multilingual (EN/NL/PT) with role-based access control.",
+    "fronnexus": "Fork of the Fronnexus project — community and collaborative frontend development platform. Contribution to an open-source project focused on connecting developers and sharing knowledge.",
+    "connecteco": "Connect Eco ecological platform — connects people and sustainable initiatives to care for the environment. Mobile-friendly app with React and Supabase that facilitates ecological actions in the local community.",
+    "bikeCraft-Origamid": "Artisan bicycle website with organic design — showcases exclusive models, contact form, and quotes. Origamid course project demonstrating HTML, CSS, and JavaScript fundamentals with focus on responsive layout and visual aesthetics.",
+    "github-api": "Free public API to search, filter, and sort public repositories of any GitHub user. Ideal for developers wanting to showcase projects in personal portfolios, dashboards, or any web app without dealing directly with the GitHub API. Offers language, topic, and text filters with 7 sorting options.",
+    "dev-erickydias": "Personal portfolio with Atelier Noir theme — multi-page with Hero, About, Skills, Experience, Projects, and Contact. Integrated with EmailJS and Supabase for dynamic data. Next.js 15, React 18, CSS Modules. Performance, SEO, accessibility, and responsive design.",
+    "claude-code-agents": "26 specialized agents (skills) for Claude Code that work in chain to create complete projects — from strategy to deploy."
   }
 }

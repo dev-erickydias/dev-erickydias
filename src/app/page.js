@@ -39,12 +39,16 @@ export default function Home() {
         // Shuffle and pick up to 3 random pinned repos
         const shuffled = pinned.sort(() => Math.random() - 0.5).slice(0, 3);
         setFeatured(
-          shuffled.map((repo) => ({
-            name: formatName(repo.name),
-            description: repo.description || "",
-            technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
-            deploy: repo.homepage || repo.url,
-          }))
+          shuffled.map((repo) => {
+            const i18nKey = `repoDescriptions.${repo.name}`;
+            const localized = t(i18nKey);
+            return {
+              name: formatName(repo.name),
+              description: localized && localized !== i18nKey ? localized : (repo.description || ""),
+              technologies: [repo.language, ...(repo.topics || [])].filter(Boolean),
+              deploy: repo.homepage || repo.url,
+            };
+          })
         );
       })
       .catch(() => {});
